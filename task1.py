@@ -1,8 +1,7 @@
-import random
+import string
 
-import numpy as np
+def is_palindrome(value):
+    return value[::-1] == value
 
-random_matrix = [[random.random() for e in range(2)] for e in range(3)]
-for i in range(3):
-    for j in range(2):
-        print(random_matrix[i][j])
+palindrome = str(input())
+print(f"Output: {is_palindrome(palindrome)}")
