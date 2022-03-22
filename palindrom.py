@@ -1,13 +1,13 @@
+#!/usr/bin/env python3
 
-word = input()
+# define a lambda function to check if string is a palindrome
+is_palindrom = lambda string: string + " " + "True" if string == string[::-1] else string + " " + "False"
 
-def is_palindrom(string):
-    length = len(string)
-    for i in range(0, length//2):
-        if string[i] != string[length-1-i]:
-            print(string, "False")
-            return
-    print(string, "True")
-    return
+def main():
+    # apply the defined function to a user input after asking the user for some string
+    is_palindrom(input("Please enter some string: "))
+    
 
-is_palindrom(word)
+if __name__ == '__main__':
+    main()
+
