@@ -1,0 +1,113 @@
+\title{Assignment 1 - Biological Databases}
+\author{
+        Leonhard Hauptfeld\\
+        MME2 - Bioinformatics
+}
+\date{\today}
+
+\documentclass[12pt]{article}
+\usepackage[english]{babel}
+
+% Set \parskip to put 10pt between paragraphs
+\setlength{\parskip}{10pt}
+
+% Set the value of \parindent to 0pt
+\setlength{\parindent}{0pt}
+
+\usepackage[a4paper,
+            bindingoffset=0.2in,
+            left=1cm,
+            right=1cm,
+            top=1cm,
+            bottom=1cm,
+            footskip=.25in]{geometry}
+
+\usepackage{multirow}
+
+\usepackage{newunicodechar} % To write the definition on the next line
+\newunicodechar{α}{\ensuremath{\alpha}}
+\newunicodechar{β}{\ensuremath{\beta}}
+\newunicodechar{γ}{\ensuremath{\gamma}}
+
+\usepackage{titling}
+\setlength{\droptitle}{-2cm}
+
+\usepackage{outlines}
+% Good underlining with \ul instead of shitty LaTeX \underline
+\usepackage{soul}
+
+% References
+\usepackage[style=ieee]{biblatex}
+\addbibresource{\jobname.bib}
+
+\begin{document}
+\maketitle
+
+\section{PubMed}
+The chosen topic was \textbf{multiple sclerosis (MS)}.
+
+An initial search for the topic yielded 100,616 results.
+After filtering for a publication age of 5-10 years (2012-2017) and 
+abstract availability, the result count reduced to 23,755. Further
+narrowing down the results to only include articles of the type "Randomized Control Trials"
+the search yielded 807 results. The search was further optimized by applying the keywords "genetic", "gene" or "biomarker" to only include
+abstracts that mentioned genetic relations to MS.
+
+The following 5 abstracts were picked from the results to be further analyzed for goals, methods
+and relevant genes mentioned.
+\begin{outline}
+    \1 \ul{\textbf{The role of KIR2DS1 in multiple sclerosis--KIR in Portuguese MS patients}}\cite{killercells}
+      \2 \textbf{Goals:} Investigating the influence of an activated KIR2DS1 gene regarding a person's resistance \& susceptibility to MS
+      \2 \textbf{Methods:} Observing activation of KIR2DS1 in 447 MS Portuguese independent from the presence of HLA-DRB1*15 allele.
+      \2 \textbf{Genes:} HLA-DRB1*15, KIR2DS1
+    \1 \ul{\textbf{Impact of vitamin A supplementation on RAR gene expression in multiple sclerosis patients}}\cite{vitaminA}
+      \2 \textbf{Goals:} Exploring the impact of retinyl palmitate supplementation on RAR subtype gene expression in peripheral blood mononuclear cells (PBMCs) with multiple sclerosis (MS) patients
+      \2 \textbf{Methods:} Double-blind randomized clinical trial, placebo and intervention group were given Vitamin-D and interferon beta-1a, intervention group would receive
+      additional retinyl palmitate whereas the placebo group would not. Peripheral blood mononuclear cells (PBMC) would be extracted and expression of the RAR-genes tested by PCR.
+      \2 \textbf{Genes:} RAR-α, RAR-γ
+\newpage
+    \1 \ul{\textbf{The Effect of Vitamin A Supplementation on FoxP3 and TGF-}}β \ul{\textbf{Gene Expression in Avonex-Treated Multiple Sclerosis Patients}}\cite{vitaminA2}
+      \2 \textbf{Goals:} Evaluating the impact of vitamin A supplementation on T cell balance (expression of FoxP3 and TGF-β)
+      \2 \textbf{Methods:} Clinical trial with MS patients, an intervention group receiving vitamin A supplements and a placebo group taking placebos.
+      Measurement of gene expression in PBMC through PCR.
+      \2 \textbf{Genes:} FoxP3, TGF-β
+    \1 \ul{\textbf{Vitamin D, HLA-DRB1 and Epstein-Barr virus antibody levels in a prospective cohort of multiple sclerosis patients}}\cite{epbarr}
+      \2 \textbf{Goals:} To study the association between serum levels of anti Epstein-Barr virus nuclear antigen 1 (EBNA-1) antibody and 25-hydroxyvitamin D (25(OH)D) in a prospective cohort of patients with relapsing-remitting multiple sclerosis
+      \2 \textbf{Methods:} 90 patients with relapsing-remitting multiple sclerosis, all participants in a randomized clinical trial; 
+      repeated, paired measurements of serum 25(OH)D and serum EBNA-1 immunoglobulin G (IgG) levels;
+      association between serum EBNA-1 IgG and 25(OH)D levels and HLA-DRB1*15 positive status analysed 
+      \2 \textbf{Genes:} HLA-DR1B
+    \1 \ul{\textbf{In vivo maintenance of human regulatory T cells during CD25 blockade}}\cite{tcells}
+      \2 \textbf{Goals:} Investigating the effect of mediated CD25 blockade on Treg homeostasis in patients with relapsing-remitting multiple sclerosis
+      \2 \textbf{Methods:} Monitoring the effect over a 52-week randomized controlled trial
+      \2 \textbf{Genes:} IFN-g, FOXP3, STAT5, IL2RA
+\end{outline}
+
+\section{GenBank}
+\paragraph{Accession Number} The accession number is a unique identifier for a DNA sequence.
+For GenBank, they are usually comprised of a prefix (letters) and a number.\cite{accno}
+
+\paragraph{Orthologs}"Orthologs are genes in different species
+that evolved from a common ancestral gene by speciation, and, in general, orthologs retain the same function during the course of evolution. Identification of orthologs is a critical process for reliable prediction of gene function in newly sequenced genomes." \cite{ortho}
+
+What follows on the next page is a more detailed analysis of the genes identified in the 5 studies from chapter 1.
+
+\begin{table}[h]
+  \begin{tabular}{|p{2.6cm}|p{1cm}|p{3cm}|p{1.8cm}|p{3.5cm}|p{3.8cm}|}
+  \hline
+  \textbf{Gene}     & \textbf{Chr.} & \textbf{Position} & \textbf{Species} & \textbf{Function(s)} & \textbf{Protein Family} \\ \hline
+  \textbf{HLA-DR1B} & 6  & NC\_000006.12 (32578775.. 32589848, complement) & Homo sapiens & Immune System, presenting peptides derived from extracellular proteins & Human leukocyte antigen complex (HLA), distinguishing body proteins from invading proteins \\ \hline
+  \textbf{KIR2DS1}  & 19 & NC\_037345.1 (62754403.. 62766895, complement)  & Homo sapiens, Bos taurus & Immune System, regulation of the immune response & Killer cell immunoglobulin-like receptors (KIR), transmembrane glycoproteins expressed by natural killer cells and subsets of T cells \\ \hline
+  \textbf{RAR-α}    & 17 & NC\_000017.11 (40309180.. 40357643)             & Homo sapiens, Mus musculus, etc. & Transcription, regulates transcription & Retinoic acid receptors (RARs), active/inhibit transcription dependent on binding \\ \cline{1-3}
+  \textbf{RAR-γ}    & 12 & NC\_000012.12 (53210569.. 53232231, complement) & & & \\ \hline
+  \textbf{FoxP3}    & X  & NC\_000023.11 (49250436.. 49264932, complement) & Homo sapiens, Mus musculus, etc. & Transcription, regulates transcription, defects linked to immunodeficiency  & Human Forkhead-box (FOX), linked to transcription \\ \hline
+  \textbf{STAT5}    & 17 & NC\_000017.11 (42287547.. 42311943)             & Homo sapiens, Mus musculus, etc. & Transcription (Growth, Lactation, Defense) & Signal Transducers and Activators of Transcription (STAT), transcription factors \\ \hline
+  \textbf{TGF-β}    & 19 & NC\_000019.10 (41330323.. 41353922, complement) & Homo sapiens, Mus musculus, etc. & Transcription, Ligand encoding & Transforming Growth Factors (TGF), encoding of ligands to do with various SMAD transcription factors \\ \hline
+  \textbf{IFN-g}    & 12 & NC\_000012.12 (68154768.. 68159740, complement) & Homo sapiens, Mus musculus, etc. & Immune System, encodes a protein that triggers immune response & Interferon (IFN) protein encoders, immune response signalling \\ \hline
+  \textbf{IL2RA}    & 10 & NC\_000010.11 (6010689.. 6062367, complement)    & Homo sapiens, Mus musculus, etc. & Immune System, encodes a protein that triggers immune response & Interleukin (IL) protein encoders, immune response signalling  \\ \hline
+  \end{tabular}
+\end{table}
+\clearpage
+\printbibliography
+
+\end{document}
