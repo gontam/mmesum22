@@ -1,6 +1,3 @@
-# Library for table
-import pandas as pd
-import numpy as np
 
 # Line Vector for storing data in it.
 lines = []
@@ -11,15 +8,8 @@ with open('G:\\My Drive\\Universität\\Master\\Master - 2. Semester (SS22) - '
     lines = f.readlines()
 f.close()
 
-# Read in Dictionary to translate sequence to protein.
-# with open('G:\\My Drive\\Universität\\Master\\Master - 2. Semester (SS22) - '
-# 'Auslandssemester\\Bioinformatics\\standard.txt', 'r') as g:
-# dt = g.readlines()
-# g.close()
-# Getting information how long the fasta file is.
 lengthFile = len(lines)
-# df = pd.DataFrame(dt)
-# print(df)
+
 dt = [['TTT', 'TCT', 'TAT', 'TGT', 'TTC', 'TCC', 'TAC', 'TGC', 'TTA', 'TCA', 'TAA', 'TGA', 'TTG', 'TCG', 'TAG', 'TGG',
        'CTT', 'CCT', 'CAT', 'CGT', 'CTC', 'CCC', 'CAC', 'CGC', 'CTA', 'CCA', 'CAA', 'CGA', 'CTG', 'CCG', 'CAG', 'CGG',
        'ATT', 'ACT', 'AAT', 'AGT', 'ATC', 'ACC', 'AAC', 'AGC', 'ATA', 'ACA', 'AAA', 'AGA', 'ATG', 'ACG', 'AAG', 'AGG',
@@ -52,49 +42,51 @@ for index in range(0, len(str1), n):
     split_strings.append(str1[index: index + n])
 print(split_strings[0])
 
-print('The whole genome is:', str1)
-print('The whole list is:', dt)
-# Delete unnecessary variables to save space.
-del x, string, listNew, lengthFile, f, lines, n, index
-
 # Implementing Logic
-v = int(input("W: "))
-a = []
+v = int(input("Value: "))
 j = 0
 i = 0
 if v == 1:
+    print('starting encryption...')
     while i <= len(split_strings):
         if len(split_strings[i]) == 3:
             if split_strings[i] == dt[0][j]:
                 print(split_strings[i], '=', dt[0][j])
-                a = dt[1][j]
-                with open('encryption.txt', 'w') as f:
-                    f.write(dt[1][j])
+                with open('encryption.txt', 'a') as f:
+                    f.write(dt[1][j]+'\n')
                 i += 1
                 j = 0
             elif j == 64:
                 break
                 f.close()
+                print('encryption done...')
             else:
                 j += 1
         else:
             break
             f.close()
+            print('encryption done...')
 
 if v == 2:
+    print('Starting encryption...')
     while i <= len(split_strings):
         if len(split_strings[i]) == 3:
             if split_strings[i] == dt[0][j]:
                 print(split_strings[i], '=', dt[0][j])
-                with open('encryption.txt', 'w') as f:
-                    f.write(dt[1][j])
+                with open('encryption.txt', 'a') as f:
+                    f.write(dt[2][j]+'\n')
                 i += 1
                 j = 0
             elif j == 64:
                 break
                 f.close()
+                print('encryption done...')
             else:
                 j += 1
         else:
             break
             f.close()
+            print('encryption done...')
+
+# Delete unnecessary variables to save space.
+del x, string, listNew, lengthFile, f, lines, n, index, dt, i, j, v, str1, split_strings
