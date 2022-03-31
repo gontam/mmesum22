@@ -1,10 +1,11 @@
-
 # Line Vector for storing data in it.
+import os
+import sys
+
 lines = []
 dt = []
 # Reading in the whole data and store it in the vector "lines".
-with open('G:\\My Drive\\Universität\\Master\\Master - 2. Semester (SS22) - '
-          'Auslandssemester\\Bioinformatics\\BD137219.1.fasta', 'r') as f:
+with open(os.path.join(sys.path[0], 'BD137219.1.fasta'), 'r') as f:
     lines = f.readlines()
 f.close()
 
@@ -52,20 +53,21 @@ if v == 1:
         if len(split_strings[i]) == 3:
             if split_strings[i] == dt[0][j]:
                 print(split_strings[i], '=', dt[0][j])
-                with open('encryption.txt', 'a') as f:
+                with open('encryption1.txt', 'a') as f:
                     f.write(dt[1][j]+'\n')
                 i += 1
                 j = 0
             elif j == 64:
-                break
                 f.close()
                 print('encryption done...')
+                break
             else:
                 j += 1
         else:
-            break
             f.close()
             print('encryption done...')
+            break
+
 
 if v == 2:
     print('Starting encryption...')
@@ -73,20 +75,20 @@ if v == 2:
         if len(split_strings[i]) == 3:
             if split_strings[i] == dt[0][j]:
                 print(split_strings[i], '=', dt[0][j])
-                with open('encryption.txt', 'a') as f:
+                with open('encryption1.txt', 'a') as f:
                     f.write(dt[2][j]+'\n')
                 i += 1
                 j = 0
             elif j == 64:
-                break
                 f.close()
                 print('encryption done...')
+                break
             else:
                 j += 1
         else:
-            break
             f.close()
             print('encryption done...')
+            break
 
 # Delete unnecessary variables to save space.
 del x, string, listNew, lengthFile, f, lines, n, index, dt, i, j, v, str1, split_strings
