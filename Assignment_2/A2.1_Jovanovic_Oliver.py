@@ -44,7 +44,7 @@ for index in range(0, len(str1), n):
 print(split_strings[0])
 
 # Implementing Logic
-v = int(input("Value: "))
+v = int(input("Value 1(short) 2(long): "))
 j = 0
 i = 0
 if v == 1:
@@ -53,8 +53,9 @@ if v == 1:
         if len(split_strings[i]) == 3:
             if split_strings[i] == dt[0][j]:
                 print(split_strings[i], '=', dt[0][j])
-                with open('encryption1.txt', 'a') as f:
-                    f.write(dt[1][j]+'\n')
+                with open('encryption.txt', 'a') as f:
+                    f.write(dt[1][j])
+                    f.write('\n')
                 i += 1
                 j = 0
             elif j == 64:
@@ -75,8 +76,9 @@ if v == 2:
         if len(split_strings[i]) == 3:
             if split_strings[i] == dt[0][j]:
                 print(split_strings[i], '=', dt[0][j])
-                with open('encryption1.txt', 'a') as f:
-                    f.write(dt[2][j]+'\n')
+                with open('encryption.txt', 'a') as f:
+                    f.write(dt[2][j])
+                    f.write('\n')
                 i += 1
                 j = 0
             elif j == 64:
