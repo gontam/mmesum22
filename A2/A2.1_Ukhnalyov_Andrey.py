@@ -14,10 +14,12 @@ def prepair_coding_seq(codons: pd.core.frame.DataFrame, column: str, seq: str) -
                 try:
                     seq_string += codons[column][codons[codons["Triplet"] == seq[k:k+3]].index[0]]
                 except Exception:
-                    seq_string = ''
+                    break
 
                 if codons[column][codons[codons["Triplet"] == seq[k:k+3]].index[0]] == 'Ter' or codons[column][codons[codons["Triplet"] == seq[k:k+3]].index[0]] == '*':
                     seq_array.append(seq_string)
+                    break
+
 
     return seq_array
 
