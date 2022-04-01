@@ -1,5 +1,5 @@
 # Import library
-from Bio.Seq import Seq
+import Bio
 from Bio import Entrez
 import pandas as pd
 import os
@@ -14,7 +14,6 @@ header = {'Accession Number': [0], 'Title': [0], 'Organism': [0], 'Sequence leng
 dataframe = pd.DataFrame(data=header)
 
 # Read data in:
-
 # Get the Path
 path_parent = os.path.dirname(os.getcwd())
 os.chdir(path_parent)
@@ -25,10 +24,29 @@ path = os.getcwd() + file
 with open(path, 'r') as f:
     lines = f.readlines()
 f.close()
-print(lines)
 
-# Length of Dataset is 608.
+# Length of Dataset is 608:
+lines_data_set = lines[0:607]
+lengthFile = len(lines_data_set)
 
+# Create a list element which we can use for the further filling of the csv:
+x = 0
+str1 = ""
+listNew = []
+while x <= lengthFile - 1:
+    string = lines_data_set[x]
+    string = string.strip('\n')
+    listNew += string
+    x += 1
+
+# Gather information:
+i = 0
+while i <= len(listNew):
+    Entrez.email = "me21x506@technikum-wien.at"
+    handle = Entrez.esearch(db="nuccore", term=listNew[i])
+    record = Entrez.read(handle)
+    gi_list = record["IdList"]
+    i += 1
 
 # Delete unnecessary variables:
 del header, file, path, path_parent, f
