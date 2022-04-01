@@ -61,4 +61,4 @@ GGA G Gly
 GTG V Val
 GCG A Ala
 GAG E Glu
-GGG G Gly  
+GGG G Gly
