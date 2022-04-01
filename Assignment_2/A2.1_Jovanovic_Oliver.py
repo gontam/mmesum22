@@ -10,7 +10,7 @@ with open(os.path.join(sys.path[0], 'BD137219.1.fasta'), 'r') as f:
 f.close()
 
 lengthFile = len(lines)
-
+# I could not edit the Standard.txt file properly so I simply put it in by hand.
 dt = [['TTT', 'TCT', 'TAT', 'TGT', 'TTC', 'TCC', 'TAC', 'TGC', 'TTA', 'TCA', 'TAA', 'TGA', 'TTG', 'TCG', 'TAG', 'TGG',
        'CTT', 'CCT', 'CAT', 'CGT', 'CTC', 'CCC', 'CAC', 'CGC', 'CTA', 'CCA', 'CAA', 'CGA', 'CTG', 'CCG', 'CAG', 'CGG',
        'ATT', 'ACT', 'AAT', 'AGT', 'ATC', 'ACC', 'AAC', 'AGC', 'ATA', 'ACA', 'AAA', 'AGA', 'ATG', 'ACG', 'AAG', 'AGG',
@@ -93,4 +93,4 @@ if v == 2:
             break
 
 # Delete unnecessary variables to save space.
-del x, string, listNew, lengthFile, f, lines, n, index, dt, i, j, v, str1, split_strings
+del x, string, listNew, lengthFile, f, lines, n, index, dt, i, j, v, str1
