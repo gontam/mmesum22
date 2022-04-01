@@ -1,0 +1,93 @@
+Translated Amino Acids: 
+Off-set =0
+
+New reading Frame:
+M K L I I L S I I L A Y C V T V N C Q D A C P V E A E A P S S T P T V P T S C E A K E G E C I D T R C A T C K R D I L S D G L C E N K P G K T C C R M C Q Y V I E S R V E A A G Y F R T F Y A K R F N F Q E P G K Y V L A R G T K G G D W S V T L T M E N L D G Q K G A V L T K T T L E V V G D V I D I T Q A T A D P I T V N G G A D P V I A N P F T I G E V T I A V V E I P G F N I T V I E F F K L I V I D I L G G R S V R I A P D T A N K G L I S G I C G N L E M N D A D D F T T D A D Q L A I Q P N I N K E F D G C P F Y G N P S D I E Y C K G L M E P Y R A V C R N N I N F Y Y Y T L S C A F A Y C M G G E E R A K H V L F D Y V E T C A A P E T R G T C V L S G H T F Y D T F D K A R Y Q F Q G P C K E L L M A A D C Y W N T W D V K V S H R D V E S Y T E V E K V T I R K Q S T V V D L I V D G K Q V K V G G V D V S I P Y S S E N T S I Y W Q D G D I L T T A I L P E A L V V K F N F K Q L L V V H I R D P F D G K T C G I C G N Y N Q D S T D D F F D A E G A C A L T P N P P G C T E E Q K P E A E R L C N S L F D S S I D E K C N V C Y K P D R I A R C M Y E Y C L R G Q Q G F C D H A W E F K K E C Y I K H G D T L E V P P E C Q * 
+
+New reading Frame:
+M N K D T E A K T T T A E D K R E A V V L Q K Q Y I L M Y S L F T Y I K I N C Y Y H N V K K K K K K K 
+
+
+Off-set =1
+* S * * F C L L Y W P T V S Q S T A R 
+New reading Frame:
+M H V L * 
+K L K H R Q V H Q Q S Q H L V K L K K E N V S I P D A Q H V N E T Y Y Q T D C V K I N Q G R H A V E C A S 
+New reading Frame:
+M * 
+L N P E * K L L D I L E R F T P K D L I F R N L V N 
+New reading Frame:
+M C W L E E P R V A T G L * 
+P S P W R I * 
+New reading Frame:
+M D R R E L Y * 
+L R Q H W R * * E T * * T L L K L L Q I L S Q L T E E L T Q L S L T R S Q L V R * P L L L S K Y P A S I L Q S S N S L N * S * * I F W E E D L * E L L Q T Q Q T K D * Y L V S V V I W R * 
+New reading Frame:
+M T L M T L L Q T Q I S W R S N P T * 
+T K S S T A A H S T G I L L I S N T A K V S W S H T E L Y V V T I S T S T I T L C P A P S L T V W E E K K E L N T S F S T 
+New reading Frame:
+M L R H A L H R K R E E R V F Y Q D I L S M T H S T K P D I N S R A H A K S F * 
+W P Q T V T G T H G 
+New reading Frame:
+M * 
+R F H I E 
+New reading Frame:
+M L S H T L R * 
+R K * Q S G N S Q L * * I * L W 
+New reading Frame:
+M A S R S R L E E W M Y L S R T V L R T H P Y T G R M E T S * 
+R R P S Y L K L L S L S S T L S S S L * F I S E I H S 
+New reading Frame:
+M E R H A A Y V V T I I K I Q L M I S L T Q K E H A L * 
+P P I P Q D V Q R S R N Q K L S D S A I V Y L I V L S T R N V 
+New reading Frame:
+M S A T S L T V L H D V C T S I A * 
+G D S K D S V T 
+New reading Frame:
+M L G S S K K N A T * 
+S 
+New reading Frame:
+M E T L * 
+K Y H L N A N K * T K I Q K L R L L Q Q K I K E K L * F F K N S I F * C T H C L L T * K * I V I I I T * R K K K K K K 
+
+
+Off-set =2
+E A N N S V Y Y I G L L C H S Q L P G C 
+New reading Frame:
+M S C R S * 
+S T V K Y T N S P N I L * S * R R R 
+New reading Frame:
+M Y R Y Q M R N M * 
+T R H T I R R T V * K * T R E D 
+New reading Frame:
+M L * 
+N V P V C N * I Q S R S C W I F * N V L R Q K I * F S G T W * I C A G S R N Q G W R L V C N P H H G E S R W T E G S C T D * D N T G G S R R R N R H Y S S Y C R S Y H S * R R S * P S Y R * P V H N W * G D H C C C R N T R L Q Y Y S H R I L * T N R D R Y S G R K I C E N C S R H S K Q R T D I W Y L W * S G D E * R * * L Y Y R R R S A G D P T Q H K Q R V R R L P I L R E S F * Y R I L Q R S H G A I Q S C 
+New reading Frame:
+M S * 
+Q Y Q L L L L H S V L R L R L L Y G R R R K S * T R P F R L C * D 
+New reading Frame:
+M R C T G N E R N V C F I R T Y F L * 
+H I R Q S Q I S I P G P 
+New reading Frame:
+M Q R A S D G R R L L L E H M G C K G F T * 
+R C * V I H * G R E S N N Q E T V N C S R F D C G W Q A G Q G W R S G C I Y P V Q F * E H I H I L A G W R H P D D G H P T * S S C R * V Q L * A A P C S S Y Q R S I R W K D 
+New reading Frame:
+M R H M W * 
+L * S R F N * * F L * R R R S 
+New reading Frame:
+M R S D P Q S P R M Y R G A E T R S * 
+A T L Q * S I * * F Y R R E 
+New reading Frame:
+M * 
+C L L Q A * P Y C T 
+New reading Frame:
+M Y V R V L P E G T A R I L * 
+P C L G V Q K R 
+New reading Frame:
+M L H K A W R H S R S T T * 
+
+New reading Frame:
+M P I N E Q R Y R S * 
+D Y Y S R R * K R S C S S S K T V Y F D V L I V Y L H K N K L L L S * R K E K K K K K 
+
+
