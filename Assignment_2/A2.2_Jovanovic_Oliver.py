@@ -1,8 +1,8 @@
 # Import library
-import Bio
 from Bio import Entrez
 import pandas as pd
 import os
+import collections
 
 # Variables:
 lines = []
@@ -39,14 +39,27 @@ while x <= lengthFile - 1:
     listNew += string
     x += 1
 
+# See if same values are in list and delete them:
+list_double = [item for item, count in collections.Counter(listNew).items() if count > 1]
+
 # Gather information:
 i = 0
-while i <= len(listNew):
-    Entrez.email = "me21x506@technikum-wien.at"
-    handle = Entrez.esearch(db="nuccore", term=listNew[i])
-    record = Entrez.read(handle)
-    gi_list = record["IdList"]
-    i += 1
+id_list = []
+while i <= len(list_double):
+    if i == len(list_double):
+        break
+    else:
+        list_double[i]
+        Entrez.email = "me21x506@technikum-wien.at"
+        handle = Entrez.esearch(db="nuccore", term=list_double[i])
+        record = Entrez.read(handle)
+        id_list.append(record["IdList"])
+        i += 1
+
+# Get Information out from id's and save them in csv file:
+# Had no further time because a friend from germany was visiting me in Vienna. Therefore I could not make the last step.
+#while i <= len(id_list):
+
 
 # Delete unnecessary variables:
-del header, file, path, path_parent, f
+del file, lines, lines_data_set, i, lengthFile, listNew, list_double, path, path_parent, x
