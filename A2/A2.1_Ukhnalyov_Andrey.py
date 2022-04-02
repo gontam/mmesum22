@@ -19,14 +19,14 @@ def prepair_coding_seq(codons: pd.core.frame.DataFrame, column: str, seq: str) -
         If the last codon checked is not one of the stop codons, then such protein can not be accomplished and the string is not appended to the list.
 
     OUTPUT:
-        A list of strings with the names of aminoacides. Each string is ended with a termination marker.
+        A list of strings with the names of aminoacides. Each string is started with Met or M (for ATG) and ended with a termination marker.
     '''
     seq_array = []
     
     for i in range(len(seq)-3):
         seq_string: str = ''
         if seq[i:i+3] == 'ATG':
-            for k in range(i+3, len(seq)-3, 3):
+            for k in range(i, len(seq)-3, 3):
                 try:
                     seq_string += codons[column][codons[codons["Triplet"] == seq[k:k+3]].index[0]]
                 except Exception:
