@@ -102,7 +102,7 @@ plt.xlim([0, 1])
 plt.ylim([0, 1])
 plt.xlabel('X')
 plt.ylabel('Y')
-plt.title('Have a look at the dat points')
+plt.title('Have a look at the data points')
 plt.show()
 
 # Implementation of Algorithm k-means (Oliver Jovanović):
@@ -150,18 +150,58 @@ plt.ylabel('Y')
 plt.title('Plot with Centroids')
 plt.show()
 
-del c1, c2, c3, data_length, dimensions
+del c1, c2, c3
 # Step 3: Assign all the points to the closest cluster centroid:
 # Step 4: Recompute centroids of newly formed clusters:
 # Step 5: Repeat Step 3 and 4:
 
-diff = 1
-j = 0
+#diff = 1
+#j = 0
 
 # Implement KMeans:
-while diff != 0:
-    x_diff = data
-    i = 1
+# Calculate distances:
+x = 0
+a = np.empty([1, 2])
+tmp = np.empty([data_length - 1, n_cluster])
+
+while x < data_length - 1:
+    a[0, 0] = data[0, x]
+    a[0, 1] = data[1, x]
+    if(cent1 == a).any():
+        dist1 = cdist(cent1, a, metric='cityblock')
+        dist2 = cdist(cent2, a, metric='cityblock')
+        dist3 = cdist(cent3, a, metric='cityblock')
+        tmp[x, 0] = dist1
+        tmp[x, 1] = dist2
+        tmp[x, 2] = dist3
+        x += 1
+        pass
+    elif(cent2 == a).any():
+        dist1 = cdist(cent1, a, metric='cityblock')
+        dist2 = cdist(cent2, a, metric='cityblock')
+        dist3 = cdist(cent3, a, metric='cityblock')
+        tmp[x, 0] = dist1
+        tmp[x, 1] = dist2
+        tmp[x, 2] = dist3
+        x += 1
+        pass
+    elif(cent3 == a).any():
+        dist1 = cdist(cent1, a, metric='cityblock')
+        dist2 = cdist(cent2, a, metric='cityblock')
+        dist3 = cdist(cent3, a, metric='cityblock')
+        tmp[x, 0] = dist1
+        tmp[x, 1] = dist2
+        tmp[x, 2] = dist3
+        x += 1
+        pass
+    else:
+        dist1 = cdist(cent1, a, metric='cityblock')
+        dist2 = cdist(cent2, a, metric='cityblock')
+        dist3 = cdist(cent3, a, metric='cityblock')
+        tmp[x, 0] = dist1
+        tmp[x, 1] = dist2
+        tmp[x, 2] = dist3
+        x += 1
 
 
 # Store Values in output_example.csv (new one) (Marija Toshevska).
