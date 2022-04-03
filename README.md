@@ -1,2 +1,3 @@
-# mmesum22
-Common repository for MME Summer semester 2022
+# Bioninformatics MME2
+Respository branch of Jakob Kainz.
+All exercises shall be executed through the main.py file.
