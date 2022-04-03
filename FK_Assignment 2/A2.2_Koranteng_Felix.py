@@ -1,17 +1,10 @@
 from Bio import Entrez
 from Bio import SeqIO
 from Bio.SeqUtils.ProtParam import ProteinAnalysis
-from Bio.SeqUtils import ProtParamData 
 
 import csv
 
 Entrez.email = "me21m001@technikum-wien.at"
-
-#handle = Entrez.einfo(db="nucleotide")
-#record = Entrez.read(handle)
-#for field in record["DbInfo"]["FieldList"]:
-#    print("%(Name)s, %(FullName)s, %(Description)s" % field)
-# ACCN, TITL, ORGN, SLEN, 
 
 terms = ["SIRT7[Gene]", "TYR[Gene]", "MITF[Gene]", "PAX3[Gene]"]
 
@@ -32,7 +25,22 @@ with open('A2.2_Melanin_Koranteng_Felix.csv', 'w', newline='') as file:
             handle = Entrez.efetch(db="nucleotide", id=gene_id, rettype="gb", retmode="text")
             gene_entry = SeqIO.read(handle, "genbank")
             handle.close()
-            X = ProteinAnalysis(str(gene_entry.translate()))
 
-            writer.writerow([gene_entry.id, gene_entry.description, gene_entry.annotations["organism"], len(gene_entry.seq), round(X.get_amino_acids_percent()['G'], 4), 'X.instability_index() -> KeyError: \':\' ' , round(X.aromaticity(), 4) , round(X.isoelectric_point(), 4)])
+            trans = gene_entry.seq.translate()
+            seq = repr(trans)
+            if (len(seq) > 25):
+                seq = seq.replace('S','')
+                seq = seq.replace('e','')
+                seq = seq.replace('q','')
+                seq = seq.replace('(','')
+                seq = seq.replace(')','')
+                seq = seq.replace('*','')
+                seq = seq.replace('\'','')
+                seq = seq.replace('.','')
+
+                Instability_Index = ProteinAnalysis(seq).instability_index()
+            else:
+                Instability_Index = 'sequence not available'
+            X = ProteinAnalysis(seq)
+            writer.writerow([gene_entry.id, gene_entry.description, gene_entry.annotations["organism"], len(gene_entry.seq), round(X.get_amino_acids_percent()['G'], 4), Instability_Index , round(X.aromaticity(), 4) , round(X.isoelectric_point(), 4)])
 

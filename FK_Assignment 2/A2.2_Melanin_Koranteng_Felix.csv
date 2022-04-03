@@ -1,21 +1,21 @@
 Accession number,Title,Organism,Sequence length ,CG % ,Protein instability ,Aromaticity ,Isoelectric point 
-NC_030425.1,"Ictalurus punctatus breed USDA103 chromosome 10, IpCoco_1.2, whole genome shotgun sequence",Ictalurus punctatus,29046025,0.0,X.instability_index() -> KeyError: ':' ,0.0,4.05
-XM_017477912.2,"PREDICTED: Ictalurus punctatus sirtuin 7 (sirt7), mRNA",Ictalurus punctatus,2143,0.0324,X.instability_index() -> KeyError: ':' ,0.0108,10.007
-NM_016538.3,"Homo sapiens sirtuin 7 (SIRT7), mRNA",Homo sapiens,1725,0.0216,X.instability_index() -> KeyError: ':' ,0.0,9.4845
-NM_001291971.1,"Gallus gallus sirtuin 7 (SIRT7), mRNA",Gallus gallus,1572,0.0703,X.instability_index() -> KeyError: ':' ,0.0162,12.0
-NM_001291966.1,"Gallus gallus phosphate cytidylyltransferase 2, ethanolamine (PCYT2), mRNA",Gallus gallus,1523,0.0216,X.instability_index() -> KeyError: ':' ,0.027,10.3125
-NC_030432.1,"Ictalurus punctatus breed USDA103 chromosome 17, IpCoco_1.2, whole genome shotgun sequence",Ictalurus punctatus,25916894,0.0,X.instability_index() -> KeyError: ':' ,0.0,4.05
-XM_017491041.2,"PREDICTED: Ictalurus punctatus tyrosinase (tyr), mRNA",Ictalurus punctatus,2312,0.0162,X.instability_index() -> KeyError: ':' ,0.0216,6.169
-OM338939.1,"Leptodactylus luctator voucher ZVCB04714 tyrosinase (Tyr) gene, partial cds",Leptodactylus luctator,510,0.027,X.instability_index() -> KeyError: ':' ,0.0541,8.3834
-OM338938.1,"Leptodactylus luctator voucher UFMGT3008 tyrosinase (Tyr) gene, partial cds",Leptodactylus luctator,510,0.027,X.instability_index() -> KeyError: ':' ,0.0541,8.3834
-OM338937.1,"Leptodactylus luctator voucher JLsj4 tyrosinase (Tyr) gene, partial cds",Leptodactylus luctator,510,0.027,X.instability_index() -> KeyError: ':' ,0.0541,8.3834
-NM_001184967.2,"Homo sapiens melanocyte inducing transcription factor (MITF), transcript variant 7, mRNA",Homo sapiens,4732,0.0162,X.instability_index() -> KeyError: ':' ,0.0324,4.529
-XM_046669259.1,"PREDICTED: Equus burchellii quagga melanocyte inducing transcription factor (MITF), transcript variant X8, mRNA",Equus quagga,4696,0.0108,X.instability_index() -> KeyError: ':' ,0.0216,10.4336
-XM_046669249.1,"PREDICTED: Equus burchellii quagga melanocyte inducing transcription factor (MITF), transcript variant X7, mRNA",Equus quagga,4714,0.0108,X.instability_index() -> KeyError: ':' ,0.0216,10.4336
-XM_046669239.1,"PREDICTED: Equus burchellii quagga melanocyte inducing transcription factor (MITF), transcript variant X6, mRNA",Equus quagga,4907,0.0216,X.instability_index() -> KeyError: ':' ,0.0162,7.9871
-XM_046669232.1,"PREDICTED: Equus burchellii quagga melanocyte inducing transcription factor (MITF), transcript variant X5, mRNA",Equus quagga,5000,0.0216,X.instability_index() -> KeyError: ':' ,0.0162,7.9871
-NM_001397759.1,"Gallus gallus paired box 3 (PAX3), transcript variant 2, mRNA",Gallus gallus,3527,0.0,X.instability_index() -> KeyError: ':' ,0.0432,6.0517
-NM_001397760.1,"Gallus gallus paired box 3 (PAX3), transcript variant 3, mRNA",Gallus gallus,3524,0.0,X.instability_index() -> KeyError: ':' ,0.0432,6.0517
-NM_008781.4,"Mus musculus paired box 3 (Pax3), transcript variant 1, mRNA",Mus musculus,3868,0.0162,X.instability_index() -> KeyError: ':' ,0.0162,5.6441
-NM_001159520.1,"Mus musculus paired box 3 (Pax3), transcript variant 2, mRNA",Mus musculus,3376,0.0162,X.instability_index() -> KeyError: ':' ,0.0162,5.6441
-NM_204269.2,"Gallus gallus paired box 3 (PAX3), transcript variant 1, mRNA",Gallus gallus,3530,0.0,X.instability_index() -> KeyError: ':' ,0.0432,6.0517
+NC_030425.1,"Ictalurus punctatus breed USDA103 chromosome 10, IpCoco_1.2, whole genome shotgun sequence",Ictalurus punctatus,29046025,0.0,sequence not available,0.0,5.24
+XM_017477912.2,"PREDICTED: Ictalurus punctatus sirtuin 7 (sirt7), mRNA",Ictalurus punctatus,2143,0.1333,28.913333333333334,0.0444,10.4413
+NM_016538.3,"Homo sapiens sirtuin 7 (SIRT7), mRNA",Homo sapiens,1725,0.0755,79.28490566037736,0.0,10.5957
+NM_001291971.1,"Gallus gallus sirtuin 7 (SIRT7), mRNA",Gallus gallus,1572,0.2766,122.62553191489363,0.0638,12.0
+NM_001291966.1,"Gallus gallus phosphate cytidylyltransferase 2, ethanolamine (PCYT2), mRNA",Gallus gallus,1523,0.0833,75.77291666666666,0.1042,11.6043
+NC_030432.1,"Ictalurus punctatus breed USDA103 chromosome 17, IpCoco_1.2, whole genome shotgun sequence",Ictalurus punctatus,25916894,0.0,sequence not available,0.0,5.24
+XM_017491041.2,"PREDICTED: Ictalurus punctatus tyrosinase (tyr), mRNA",Ictalurus punctatus,2312,0.0625,13.718750000000002,0.0833,7.1254
+OM338939.1,"Leptodactylus luctator voucher ZVCB04714 tyrosinase (Tyr) gene, partial cds",Leptodactylus luctator,510,0.0893,22.31803571428572,0.1786,8.9943
+OM338938.1,"Leptodactylus luctator voucher UFMGT3008 tyrosinase (Tyr) gene, partial cds",Leptodactylus luctator,510,0.0893,22.31803571428572,0.1786,8.9943
+OM338937.1,"Leptodactylus luctator voucher JLsj4 tyrosinase (Tyr) gene, partial cds",Leptodactylus luctator,510,0.0893,22.31803571428572,0.1786,8.9943
+NM_001184967.2,"Homo sapiens melanocyte inducing transcription factor (MITF), transcript variant 7, mRNA",Homo sapiens,4732,0.075,75.7075,0.15,6.1803
+XM_046669259.1,"PREDICTED: Equus burchellii quagga melanocyte inducing transcription factor (MITF), transcript variant X8, mRNA",Equus quagga,4696,0.04,71.77599999999998,0.08,11.3154
+XM_046669249.1,"PREDICTED: Equus burchellii quagga melanocyte inducing transcription factor (MITF), transcript variant X7, mRNA",Equus quagga,4714,0.04,71.77599999999998,0.08,11.3154
+XM_046669239.1,"PREDICTED: Equus burchellii quagga melanocyte inducing transcription factor (MITF), transcript variant X6, mRNA",Equus quagga,4907,0.0833,45.93958333333334,0.0625,9.3039
+XM_046669232.1,"PREDICTED: Equus burchellii quagga melanocyte inducing transcription factor (MITF), transcript variant X5, mRNA",Equus quagga,5000,0.0833,45.93958333333334,0.0625,9.3039
+NM_001397759.1,"Gallus gallus paired box 3 (PAX3), transcript variant 2, mRNA",Gallus gallus,3527,0.0,75.50215686274508,0.1569,7.6968
+NM_001397760.1,"Gallus gallus paired box 3 (PAX3), transcript variant 3, mRNA",Gallus gallus,3524,0.0,75.50215686274508,0.1569,7.6968
+NM_008781.4,"Mus musculus paired box 3 (Pax3), transcript variant 1, mRNA",Mus musculus,3868,0.0667,45.688888888888876,0.0667,6.4393
+NM_001159520.1,"Mus musculus paired box 3 (Pax3), transcript variant 2, mRNA",Mus musculus,3376,0.0667,45.688888888888876,0.0667,6.4393
+NM_204269.2,"Gallus gallus paired box 3 (PAX3), transcript variant 1, mRNA",Gallus gallus,3530,0.0,75.50215686274508,0.1569,7.6968
