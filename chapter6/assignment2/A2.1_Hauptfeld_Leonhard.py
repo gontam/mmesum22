@@ -8,12 +8,13 @@ class TripletError:
     pass
 class TranslationError:
     pass
+# Class for storing translation table entries
 class TranslationTriplet:
     def __init__(self, dna, protein, name):
         self.dna = dna
         self.protein = protein
         self.name = name
-
+# Parse a txt file into a translation table
 def parse_triplets(filename):
     triplets = []
     f = open(filename, "r")
@@ -25,7 +26,8 @@ def parse_triplets(filename):
         triplets.append(TranslationTriplet(line[0], line[1], line[2]))
     f.close()
     return triplets
-
+# Class to hold an open frame, holds a reference to the original frame and indexes of
+# the open frame
 class ProteinOpenFrame:
     def __init__(self, frame, start_index=None, stop_index=None):
         self.frame = frame
@@ -42,6 +44,7 @@ class ProteinOpenFrame:
             return self.get_sequence().replace("*", "-")
         else:
             raise ValueError(f"Invalid open frame format: {format}")
+# Represents a single protein frame (with an offset applied to translation and reversed/not reversed)
 class ProteinFrame:
     def __init__(self, offset, reversed=False, sequence=""):
         self.offset = offset
@@ -65,6 +68,8 @@ class ProteinFrame:
 
 class FastaError(Exception):
     pass
+# Holds a parsed Fasta file and the translate method that
+# generates a translated protein in three offsets (run it again reversed to get six)
 class FastaSequence:
     def __init__(self, description, sequence=""):
         self.description = description
@@ -89,7 +94,7 @@ class FastaSequence:
                 # Translate
                 frames[offset].append_sequence(triplet.protein)
         return list(frames.values())
-
+# Parse all entries of a Fasta file
 def parse_fasta(filename):
     sequences = []
     sequence = None
