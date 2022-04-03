@@ -4,8 +4,8 @@ from Bio.SeqUtils import GC
 from Bio.SeqUtils.ProtParam import ProteinAnalysis
 from csv import DictWriter
 
-SEARCH_TERMS = ["HLA-DRB1", "KIR2DS1", "IFN-g"]
-SEARCH_COUNTS = [2,2,1]
+SEARCH_TERMS = ["HLA-DRB1", "KIR2DS1", "STAT5"]
+SEARCH_COUNT = 5
 SEARCH_ORGANISM = "Homo sapiens"
 OUTPUT_FILE = "A2.2_MultipleSclerosis_Hauptfeld_Leonhard.csv"
 OUTPUT_HEADERS = ['Accession number','Title','Organism','Sequence length','CG %','Protein instability','Aromaticity','Isoelectric point']
@@ -44,7 +44,7 @@ if __name__ == "__main__":
     index = 0
     info = []
     for term in SEARCH_TERMS:
-        gene_ids = search_gene(term, SEARCH_ORGANISM, SEARCH_COUNTS[index])
+        gene_ids = search_gene(term, SEARCH_ORGANISM, SEARCH_COUNT)
         for gene_id in gene_ids:
             info.append(retrieve_gene(gene_id))
         index += 1
