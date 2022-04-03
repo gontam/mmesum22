@@ -9,8 +9,6 @@
 # User can choose between one- or three-letter coding.
 # Result: coding sequences within the start and stop codons is written to ‘BD137219.1_translated_Schachl.txt’
 
-# load information from standard.txt
-import Bio.GenBank
 
 with open('standard.txt') as table_triplets:
     triplets = table_triplets.readlines()
