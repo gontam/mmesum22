@@ -1,0 +1,21 @@
+Accession number,Title,Organism,Sequence length,CG %,Protein instability,Aromaticity,Isoelectric point
+"['NM_001389377', 'XM_015289831']","Gallus gallus lactase (LCT), mRNA",Gallus gallus,67,gene_analysis.instability_index() -> Error,0.0,5.223355674743652
+['NC_000913'],"Escherichia coli str. K-12 substr. MG1655, complete genome",Escherichia coli str. K-12 substr. MG1655,25,gene_analysis.instability_index() -> Error,0.0,5.240009498596191
+['U00096'],"Escherichia coli str. K-12 substr. MG1655, complete genome",Escherichia coli str. K-12 substr. MG1655,67,gene_analysis.instability_index() -> Error,0.0,5.221536827087401
+['XM_046463748'],"PREDICTED: Marmota monax lactase (Lct), mRNA",Marmota monax,67,gene_analysis.instability_index() -> Error,0.0,5.223355674743652
+['XM_046018253'],"PREDICTED: Meles meles lactase (LCT), mRNA",Meles meles,67,gene_analysis.instability_index() -> Error,0.0,5.2180696487426745
+"['NM_001281311', 'XM_004465321']","Dasypus novemcinctus C-X-C motif chemokine ligand 8 (CXCL8), mRNA",Dasypus novemcinctus,67,gene_analysis.instability_index() -> Error,0.0,5.211192131042479
+"['NM_001280642', 'XM_004319596']","Tursiops truncatus C-X-C motif chemokine ligand 8 (CXCL8), mRNA",Tursiops truncatus,67,gene_analysis.instability_index() -> Error,0.0,5.212897300720214
+['NM_001173399'],"Cavia porcellus C-X-C motif chemokine ligand 8 (Cxcl8), mRNA",Cavia porcellus,67,gene_analysis.instability_index() -> Error,0.0,5.214602470397948
+['NM_001140710'],"Salmo salar interleukin 8 (il8), mRNA",Salmo salar,67,gene_analysis.instability_index() -> Error,0.0,5.211192131042479
+['NC_059447'],"Salmo salar chromosome ssa06, Ssal_v3.1, whole genome shotgun sequence",Salmo salar,26,gene_analysis.instability_index() -> Error,0.0,5.240009498596191
+['NM_000572'],"Homo sapiens interleukin 10 (IL10), transcript variant 1, mRNA",Homo sapiens,67,gene_analysis.instability_index() -> Error,0.0,5.211192131042479
+"['NM_001004414', 'XM_425823']","Gallus gallus interleukin 10 (IL10), mRNA",Gallus gallus,67,gene_analysis.instability_index() -> Error,0.0,5.216307640075683
+['NC_052598'],"Gallus gallus isolate bGalGal1 chromosome 26, alternate assembly bGalGal1.pat.whiteleghornlayer.GRCg7w, whole genome shotgun sequence",Gallus gallus,25,gene_analysis.instability_index() -> Error,0.0,5.240009498596191
+['NC_052557'],"Gallus gallus isolate bGalGal1 chromosome 26, bGalGal1.mat.broiler.GRCg7b, whole genome shotgun sequence",Gallus gallus,25,gene_analysis.instability_index() -> Error,0.0,5.240009498596191
+['NR_168466'],"Homo sapiens interleukin 10 (IL10), transcript variant 3, non-coding RNA",Homo sapiens,67,gene_analysis.instability_index() -> Error,0.0,5.211192131042479
+['NM_000594'],"Homo sapiens tumor necrosis factor (TNF), mRNA",Homo sapiens,67,gene_analysis.instability_index() -> Error,0.0,5.214602470397948
+['NM_001278601'],"Mus musculus tumor necrosis factor (Tnf), transcript variant 2, mRNA",Mus musculus,67,gene_analysis.instability_index() -> Error,0.0,5.216307640075683
+['NM_013693'],"Mus musculus tumor necrosis factor (Tnf), transcript variant 1, mRNA",Mus musculus,67,gene_analysis.instability_index() -> Error,0.0,5.216307640075683
+['NM_001081819'],"Equus caballus tumor necrosis factor (TNF), mRNA",Equus caballus,67,gene_analysis.instability_index() -> Error,0.0,5.211192131042479
+['NM_012675'],"Rattus norvegicus tumor necrosis factor (Tnf), mRNA",Rattus norvegicus,67,gene_analysis.instability_index() -> Error,0.0,5.209543800354003
