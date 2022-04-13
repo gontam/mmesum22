@@ -1,6 +1,5 @@
 # This is a test.
 
-import csv
 file = open('input.csv')
 print(file)
 data = []
