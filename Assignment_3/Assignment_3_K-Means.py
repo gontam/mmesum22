@@ -1,3 +1,7 @@
+# Import needed libraries:
+import matplotlib.pyplot as plt
+import pandas as pd
+from sklearn.cluster import KMeans
 
 # Read in Data (Cristina Soriano):
 # TODO: Read in Data with pandas (as Dataframe): see: https://datatofish.com/import-csv-file-python-using-pandas/
@@ -16,3 +20,8 @@ data[1]=data[1].split(';')
 rows = data[1][0]
 columns = data[1][1]
 
+# Implementation of Algorithm k-means (Oliver Jovanovic):
+# ToDo: Implement the algorithm using the given data.
+# ToDo: Process the data as most efficient and saveable for Marija Toshevska.
+
+# Store Values in output_example.csv (new one).
