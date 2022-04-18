@@ -1,8 +1,8 @@
 # Import needed libraries:
 #import matplotlib.pyplot as plt
-#import pandas as pd
 import os
 import csv
+#import pandas as pd
 #from sklearn.cluster import KMeans
 
 # Read in Data (Cristina Soriano):
@@ -21,14 +21,18 @@ direct = os.path.dirname(actFile)
 
 # Read in csv file without Pandas (it does not work somehow...)
 file = open(csvFile)
-print(file)
-reader = csv.reader(file)
+reader = csv.reader(file, delimiter=';')
 rows = []
 for row in reader:
     rows.append(row)
+file.close()
 
-print(rows)
+# For data points
+length = len(rows) - 2
 
+# Number of Clusters
+# Split cluster by "ï»¿"
+cluster = rows[0]
 
 # Cristina Soriano:
 #file = open('input.csv')
