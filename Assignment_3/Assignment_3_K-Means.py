@@ -2,6 +2,7 @@
 #import matplotlib.pyplot as plt
 import os
 import csv
+import numpy as np
 #import pandas as pd
 #from sklearn.cluster import KMeans
 
@@ -27,25 +28,21 @@ for row in reader:
     rows.append(row)
 file.close()
 
-# For data points
-length = len(rows) - 2
-
 # Number of Clusters
 # Split cluster by "ï»¿"
+def listToString(s):
+    str1 = " "
+    return(str1.join(s))
 cluster = rows[0]
+a = listToString(cluster)
+clHelp = list(a)
+n_cluster = clHelp[3]
 
-# Cristina Soriano:
-#file = open('input.csv')
-#print(file)
-#data = []
-#for i in file:
-#    data.append(i)
+# Dimensions:
+lst = rows[1]
 
-#cluster_num = data[0][3]
 
-#data[1] = data[1].split(';')
-#rows = data[1][0]
-#columns = data[1][1]
+del a, clHelp, cluster, csvFile, actFile, direct, reader, row, rows[0]
 
 # Implementation of Algorithm k-means (Oliver Jovanović):
 # ToDo: Implement the algorithm using the given data.
