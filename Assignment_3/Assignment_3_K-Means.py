@@ -48,7 +48,13 @@ splits = np.array_split(lst, 2)
 data_length = int(splits[0])
 dimensions = int(splits[1])
 
+
+# Carve out Data points:
+
+
+
 del a, clHelp, cluster, csvFile, actFile, direct, reader, row, rows[0], lst, splits
+del rows[0]
 
 # Implementation of Algorithm k-means (Oliver Jovanović):
 # ToDo: Implement the algorithm using the given data.
