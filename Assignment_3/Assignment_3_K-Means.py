@@ -1,7 +1,9 @@
 # Import needed libraries:
-import matplotlib.pyplot as plt
-import pandas as pd
-from sklearn.cluster import KMeans
+#import matplotlib.pyplot as plt
+#import pandas as pd
+import os
+import csv
+#from sklearn.cluster import KMeans
 
 # Read in Data (Cristina Soriano):
 # ToDo: Read in Data with pandas (as Dataframe): see:
@@ -11,7 +13,24 @@ from sklearn.cluster import KMeans
 #  https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.html
 # ToDo: Make the data look like the table in excel that I uploaded in our folder.
 
+# @Oliver Jovanovic:
+# get path of file and directory:
+actFile = os.path.join(os.getcwd(), os.listdir(os.getcwd())[0])
+csvFile = os.path.dirname(actFile)+'\input.csv'
+direct = os.path.dirname(actFile)
 
+# Read in csv file without Pandas (it does not work somehow...)
+file = open(csvFile)
+print(file)
+reader = csv.reader(file)
+rows = []
+for row in reader:
+    rows.append(row)
+
+print(rows)
+
+
+# Cristina Soriano:
 #file = open('input.csv')
 #print(file)
 #data = []
