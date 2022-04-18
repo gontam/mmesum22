@@ -67,7 +67,21 @@ while x <= data_length - 1:
         y_point = np.append(y_point, splits[dimensions - 1])
     x += 1
 
-del rows, splits, data_points, x, lst, file
+# Change "," in "."
+x = 0
+while x <= len(x_point) - 1:
+    a = x_point[x]
+    b = y_point[x]
+    a = str(a).replace(',', '.')
+    b = str(b).replace(',', '.')
+    a = float(a)
+    b = float(b)
+    x_point[x] = a
+    y_point[x] = b
+    x += 1
+
+
+del rows, splits, data_points, x, a, b, lst, file
 # Implementation of Algorithm k-means (Oliver Jovanović):
 # ToDo: Implement the algorithm using the given data.
 # ToDo: Implement it from scratch:
