@@ -4,6 +4,7 @@ import os
 import csv
 # import pandas as pd
 import numpy as np
+from random import sample
 # from sklearn.cluster import KMeans
 
 
@@ -42,7 +43,7 @@ def list_to_string(s):
 cluster = rows[0]
 a = list_to_string(cluster)
 clHelp = list(a)
-n_cluster = clHelp[3]
+n_cluster = int(clHelp[3])
 
 # Dimensions:
 lst = rows[1]
@@ -95,7 +96,7 @@ data = np.vstack((np.array(x_point), np.array(y_point)))
 del rows, splits, data_points, x, a, b, lst, file
 
 # Plot the points:
-plt.scatter(y_point, x_point, alpha=.5)
+plt.scatter(data[0], data[1], alpha=.5)
 plt.xlim([0, 1])
 plt.ylim([0, 1])
 plt.xlabel('X-Values')
@@ -114,7 +115,27 @@ plt.show()
 
 # Implementing it from scratch:
 
+# Step 1: Select value of K:
+# It is already selected by n_cluster.
 
+# Step 2: Select random K points which will act as centroids.
+np.random.seed(123)
+# Select random seeds:
+c1, c2, c3 = sample(range(0, 17), n_cluster)
+# Centroid 1:
+cent1 = np.empty([1, 2])
+cent1[0, 0] = data[0, c1]
+cent1[0, 1] = data[1, c1]
+
+# Centroid 2:
+cent2 = np.empty([1, 2])
+cent2[0, 0] = data[0, c2]
+cent2[0, 1] = data[1, c2]
+
+# Centroid 3:
+cent3 = np.empty([1, 2])
+cent3[0, 0] = data[0, c3]
+cent3[0, 1] = data[1, c3]
 
 
 
