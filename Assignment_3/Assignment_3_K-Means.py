@@ -2,7 +2,7 @@
 # import matplotlib.pyplot as plt
 import os
 import csv
-# import numpy as np
+import numpy as np
 # import pandas as pd
 # from sklearn.cluster import KMeans
 
@@ -44,9 +44,11 @@ n_cluster = clHelp[3]
 
 # Dimensions:
 lst = rows[1]
+splits = np.array_split(lst, 2)
+data_length = int(splits[0])
+dimensions = int(splits[1])
 
-
-del a, clHelp, cluster, csvFile, actFile, direct, reader, row, rows[0]
+del a, clHelp, cluster, csvFile, actFile, direct, reader, row, rows[0], lst, splits
 
 # Implementation of Algorithm k-means (Oliver Jovanović):
 # ToDo: Implement the algorithm using the given data.
