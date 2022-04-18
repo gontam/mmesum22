@@ -2,8 +2,10 @@
 import matplotlib.pyplot as plt
 import os
 import csv
+# import pandas as pd
 import numpy as np
 # from sklearn.cluster import KMeans
+
 
 # Read in Data (Cristina Soriano):
 # Done by Oliver Jovanović:
@@ -48,6 +50,7 @@ splits = np.array_split(lst, 2)
 data_length = int(splits[0])
 dimensions = int(splits[1])
 
+# delete unnecessary variables:
 del a, clHelp, cluster, csvFile, actFile, direct, reader, row, rows[0], lst, splits
 del rows[0]
 
@@ -67,7 +70,7 @@ while x <= data_length - 1:
         y_point = np.append(y_point, splits[dimensions - 1])
     x += 1
 
-# Change "," in "."
+# Change "," in ".":
 x = 0
 lst = []
 while x <= len(x_point) - 1:
@@ -81,10 +84,14 @@ while x <= len(x_point) - 1:
     y_point[x] = b
     x += 1
 
-# Cast every string into float
+# Cast every string into float:
 x_point = list(map(float, x_point))
 y_point = list(map(float, y_point))
 
+# Put both points together:
+data = np.vstack((np.array(x_point), np.array(y_point)))
+
+# Delete unnecessary variables:
 del rows, splits, data_points, x, a, b, lst, file
 
 # Plot the points:
@@ -101,5 +108,14 @@ plt.show()
 # ToDo: Implement it from scratch:
 #  https://www.analyticsvidhya.com/blog/2021/04/k-means-clustering-simplified-in-python/
 # ToDo: Process the data as most efficient and usable for Marija Toshevska.
+
+# Try it via from sklearn.cluster import KMeans (ModuleNotFoundError: No module named 'sklearn'):
+# kmeans = KMeans(n_clusters=n_cluster, random_state=0).fit()
+
+# Implementing it from scratch:
+
+
+
+
 
 # Store Values in output_example.csv (new one) (Marija Toshevska).
