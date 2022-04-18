@@ -6,6 +6,7 @@ import csv
 import numpy as np
 from random import sample
 # from sklearn.cluster import KMeans
+from scipy.spatial.distance import cdist
 
 
 # Read in Data (Cristina Soriano):
@@ -99,8 +100,8 @@ del rows, splits, data_points, x, a, b, lst, file
 plt.scatter(data[0], data[1], alpha=.5)
 plt.xlim([0, 1])
 plt.ylim([0, 1])
-plt.xlabel('X-Values')
-plt.ylabel('Y-Values')
+plt.xlabel('X')
+plt.ylabel('Y')
 plt.title('Have a look at the dat points')
 plt.show()
 
@@ -144,10 +145,23 @@ plt.scatter(cent2[0, 0], cent2[0, 1], c='red')
 plt.scatter(cent3[0, 0], cent3[0, 1], c='red')
 plt.xlim([0, 1])
 plt.ylim([0, 1])
-plt.xlabel('X-Values')
-plt.ylabel('Y-Values')
-plt.title('Have a look at the dat points')
+plt.xlabel('X-')
+plt.ylabel('Y')
+plt.title('Plot with Centroids')
 plt.show()
+
+del c1, c2, c3, data_length, dimensions
+# Step 3: Assign all the points to the closest cluster centroid:
+# Step 4: Recompute centroids of newly formed clusters:
+# Step 5: Repeat Step 3 and 4:
+
+diff = 1
+j = 0
+
+# Implement KMeans:
+while diff != 0:
+    x_diff = data
+    i = 1
 
 
 # Store Values in output_example.csv (new one) (Marija Toshevska).
