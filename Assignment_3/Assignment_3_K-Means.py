@@ -7,12 +7,13 @@ import numpy as np
 # from sklearn.cluster import KMeans
 
 # Read in Data (Cristina Soriano):
-# ToDo: Read in Data with pandas (as Dataframe): see:
+# Done by Oliver Jovanović:
+#  Read in Data with pandas (as Dataframe): see:
 #  https://datatofish.com/import-csv-file-python-using-pandas/
-# ToDo: Please delete the character (\n) from data set.
-# ToDo: As you can see in, e.g. data[2] you have two values in one string please do two columns e.g.,
+#  Please delete the character (\n) from data set.
+#  As you can see in, e.g. data[2] you have two values in one string please do two columns e.g.,
 #  https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.html
-# ToDo: Make the data look like the table in excel that I uploaded in our folder.
+#  Make the data look like the table in Excel that I uploaded in our folder.
 
 # @Oliver Jovanović:
 # get path of file and directory:
