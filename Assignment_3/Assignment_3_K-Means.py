@@ -1,10 +1,10 @@
 # Import needed libraries:
-#import matplotlib.pyplot as plt
+# import matplotlib.pyplot as plt
 import os
 import csv
-import numpy as np
-#import pandas as pd
-#from sklearn.cluster import KMeans
+# import numpy as np
+# import pandas as pd
+# from sklearn.cluster import KMeans
 
 # Read in Data (Cristina Soriano):
 # ToDo: Read in Data with pandas (as Dataframe): see:
@@ -14,7 +14,7 @@ import numpy as np
 #  https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.html
 # ToDo: Make the data look like the table in excel that I uploaded in our folder.
 
-# @Oliver Jovanovic:
+# @Oliver Jovanović:
 # get path of file and directory:
 actFile = os.path.join(os.getcwd(), os.listdir(os.getcwd())[0])
 csvFile = os.path.dirname(actFile)+'\input.csv'
@@ -29,12 +29,16 @@ for row in reader:
 file.close()
 
 # Number of Clusters
-# Split cluster by "ï»¿"
-def listToString(s):
+# Split clusters by "ï»¿"
+
+
+def list_to_string(s):
     str1 = " "
-    return(str1.join(s))
+    return str1.join(s)
+
+
 cluster = rows[0]
-a = listToString(cluster)
+a = list_to_string(cluster)
 clHelp = list(a)
 n_cluster = clHelp[3]
 
