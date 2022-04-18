@@ -1,5 +1,5 @@
 # Import needed libraries:
-# import matplotlib.pyplot as plt
+import matplotlib.pyplot as plt
 import os
 import csv
 import numpy as np
@@ -48,14 +48,25 @@ splits = np.array_split(lst, 2)
 data_length = int(splits[0])
 dimensions = int(splits[1])
 
-
-# Carve out Data points:
-
-
-
 del a, clHelp, cluster, csvFile, actFile, direct, reader, row, rows[0], lst, splits
 del rows[0]
 
+# Carve out Data points:
+data_points = rows
+
+x = 0
+while x <= data_length - 1:
+    lst = data_points[x]
+    splits = np.array_split(lst, dimensions)
+    if x == 0:
+        x_point = splits[dimensions - dimensions]
+        y_point = splits[dimensions - 1]
+    else:
+        x_point = np.append(x_point, splits[dimensions - dimensions])
+        y_point = np.append(y_point, splits[dimensions - 1])
+    x += 1
+
+del rows, splits, data_points, x, lst, file
 # Implementation of Algorithm k-means (Oliver Jovanović):
 # ToDo: Implement the algorithm using the given data.
 # ToDo: Implement it from scratch:
