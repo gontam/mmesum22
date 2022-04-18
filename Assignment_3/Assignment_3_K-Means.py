@@ -79,9 +79,8 @@ while x <= len(x_point) - 1:
     x_point[x] = a
     y_point[x] = b
     x += 1
-
-
 del rows, splits, data_points, x, a, b, lst, file
+
 # Implementation of Algorithm k-means (Oliver Jovanović):
 # ToDo: Implement the algorithm using the given data.
 # ToDo: Implement it from scratch:
