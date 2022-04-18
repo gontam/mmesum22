@@ -137,6 +137,17 @@ cent3 = np.empty([1, 2])
 cent3[0, 0] = data[0, c3]
 cent3[0, 1] = data[1, c3]
 
+# Plot normal data and random centroids:
+plt.scatter(data[0], data[1], c='black')
+plt.scatter(cent1[0, 0], cent1[0, 1], c='red')
+plt.scatter(cent2[0, 0], cent2[0, 1], c='red')
+plt.scatter(cent3[0, 0], cent3[0, 1], c='red')
+plt.xlim([0, 1])
+plt.ylim([0, 1])
+plt.xlabel('X-Values')
+plt.ylabel('Y-Values')
+plt.title('Have a look at the dat points')
+plt.show()
 
 
 # Store Values in output_example.csv (new one) (Marija Toshevska).
