@@ -203,6 +203,7 @@ while x <= data_length - 1:
         tmp[x, 1] = dist2
         tmp[x, 2] = dist3
         x += 1
+
 x = 0
 cent1 = np.empty([data_length, 1])
 cent2 = np.empty([data_length, 1])
