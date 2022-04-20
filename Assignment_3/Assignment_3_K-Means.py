@@ -109,6 +109,7 @@ plt.show()
 # ToDo: Implement the algorithm using the given data.
 # ToDo: Implement it from scratch:
 #  https://www.analyticsvidhya.com/blog/2021/04/k-means-clustering-simplified-in-python/
+#  or https://anderfernandez.com/en/blog/kmeans-algorithm-python/
 # ToDo: Process the data as most efficient and usable for Marija Toshevska.
 
 # Try it via from sklearn.cluster import KMeans (ModuleNotFoundError: No module named 'sklearn'):
@@ -150,7 +151,7 @@ plt.ylabel('Y')
 plt.title('Plot with Centroids')
 plt.show()
 
-del c1, c2, c3
+del c1, c2, c3, sample
 # Step 3: Assign all the points to the closest cluster centroid:
 # Step 4: Recompute centroids of newly formed clusters:
 # Step 5: Repeat Step 3 and 4:
@@ -210,20 +211,14 @@ cent3 = np.empty([data_length, 1])
 while x < data_length - 1:
     if(tmp[x, 0] == min(tmp[x])):
         cent1[x, 0] = min(tmp[x])
-        cent2[x, 0] = 0
-        cent3[x, 0] = 0
         x += 1
         pass
     elif(tmp[x, 1] == min(tmp[x])):
         cent2[x, 0] = min(tmp[x])
-        cent1[x, 0] = 0
-        cent3[x, 0] = 0
         x += 1
         pass
     elif(tmp[x, 2] == min(tmp[x])):
         cent3[x, 0] = min(tmp[x])
-        cent1[x, 0] = 0
-        cent2[x, 0] = 0
         x += 1
         pass
 # Calculate mean:
