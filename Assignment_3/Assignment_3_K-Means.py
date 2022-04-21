@@ -205,77 +205,113 @@ while x <= data_length - 1:
         x += 1
 
 x = 0
-cent1 = np.empty([data_length, 1])
-cent2 = np.empty([data_length, 1])
-cent3 = np.empty([data_length, 1])
+cent1 = np.empty([data_length, dimensions])
+cent2 = np.empty([data_length, dimensions])
+cent3 = np.empty([data_length, dimensions])
 # Rearrange the Centroids:
 while x < data_length - 1:
     if(tmp[x, 0] == min(tmp[x])):
-        cent1[x, 0] = min(tmp[x])
+        cent1[x, dimensions - dimensions] = x_point[x]
+        cent1[x, dimensions - 1] = y_point[x]
+        cent2[x, dimensions - dimensions] = 0
+        cent2[x, dimensions - 1] = 0
+        cent3[x, dimensions - dimensions] = 0
+        cent3[x, dimensions - 1] = 0
         x += 1
         pass
     elif(tmp[x, 1] == min(tmp[x])):
-        cent2[x, 0] = min(tmp[x])
+        cent1[x, dimensions - dimensions] = 0
+        cent1[x, dimensions - 1] = 0
+        cent2[x, dimensions - dimensions] = x_point[x]
+        cent2[x, dimensions - 1] = y_point[x]
+        cent3[x, dimensions - dimensions] = 0
+        cent3[x, dimensions - 1] = 0
         x += 1
         pass
     elif(tmp[x, 2] == min(tmp[x])):
-        cent3[x, 0] = min(tmp[x])
+        cent1[x, dimensions - dimensions] = 0
+        cent1[x, dimensions - 1] = 0
+        cent2[x, dimensions - dimensions] = 0
+        cent2[x, dimensions - 1] = 0
+        cent3[x, dimensions - dimensions] = x_point[x]
+        cent3[x, dimensions - 1] = y_point[x]
         x += 1
         pass
 # Calculate mean:
 # Centroid 1:
-m1 = 0.0
+m1 = np.empty([1, 2])
+m1[0, 0] = 0
+m1[0, 1] = 0
 n1 = 0.0
-c1 = 0.0
-s1 = 0.0
+c1 = np.empty([1, 2])
+c1[0, 0] = 0
+c1[0, 1] = 0
 i1 = 0
 while i1 <= data_length - 1:
     if(cent1[i1] == 0).any():
         i1 += 1
         pass
     else:
-        c1 = float(cent1[i1])
-        s1 += c1
+        c1[0, 0] += float(cent1[i1, 0])
+        c1[0, 1] += float(cent1[i1, 1])
         n1 += 1
         i1 += 1
         pass
 
 # Centroid 2:
-m2 = 0.0
+m2 = np.empty([1, 2])
+m2[0, 0] = 0
+m2[0, 1] = 0
 n2 = 0.0
-c2 = 0.0
-s2 = 0.0
+c2 = np.empty([1, 2])
+c2[0, 0] = 0
+c2[0, 1] = 0
 i2 = 0
 while i2 <= data_length - 1:
     if(cent2[i2] == 0).any():
         i2 += 1
         pass
     else:
-        c2 = float(cent2[i2])
-        s2 += c2
+        c2[0, 0] += float(cent2[i2, 0])
+        c2[0, 1] += float(cent1[i2, 1])
         n2 += 1
         i2 += 1
         pass
 
 # Centroid 3:
-m3 = 0.0
+m3 = np.empty([1, 2])
+m3[0, 0] = 0
+m3[0, 1] = 0
 n3 = 0.0
-c3 = 0.0
-s3 = 0.0
+c3 = np.empty([1, 2])
+c3[0, 0] = 0
+c3[0, 1] = 0
 i3 = 0
 while i3 <= data_length - 1:
     if(cent3[i3] == 0).any():
         i3 += 1
         pass
     else:
-        c3 = float(cent3[i3])
-        s3 += c3
+        c3[0, 0] += float(cent3[i3, 0])
+        c3[0, 1] += float(cent3[i3, 1])
         n3 += 1
         i3 += 1
         pass
 # Calculate mean:
-m1 = s1/n1
-m2 = s2/n2
-m3 = s3/n3
+m1 = c1 / n1
+m2 = c2 / n2
+m3 = c3 / n3
+
+# Plot new Centroids:
+plt.scatter(data[0], data[1], c='black')
+plt.scatter(m1[0, 0], m1[0, 1], c='red')
+plt.scatter(m2[0, 0], m2[0, 1], c='red')
+plt.scatter(m3[0, 0], m3[0, 1], c='red')
+plt.xlim([0, 1])
+plt.ylim([0, 1])
+plt.xlabel('X-')
+plt.ylabel('Y')
+plt.title('Plot with new Centroids')
+plt.show()
 
 # Store Values in output_example.csv (new one) (Marija Toshevska).
