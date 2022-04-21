@@ -142,8 +142,8 @@ cent3[0, 1] = data[1, c3]
 # Plot normal data and random centroids:
 plt.scatter(data[0], data[1], c='black')
 plt.scatter(cent1[0, 0], cent1[0, 1], c='red')
-plt.scatter(cent2[0, 0], cent2[0, 1], c='red')
-plt.scatter(cent3[0, 0], cent3[0, 1], c='red')
+plt.scatter(cent2[0, 0], cent2[0, 1], c='blue')
+plt.scatter(cent3[0, 0], cent3[0, 1], c='green')
 plt.xlim([0, 1])
 plt.ylim([0, 1])
 plt.xlabel('X-')
@@ -242,7 +242,7 @@ while x < data_length - 1:
 m1 = np.empty([1, 2])
 m1[0, 0] = 0
 m1[0, 1] = 0
-n1 = 0.0
+n1 = 0
 c1 = np.empty([1, 2])
 c1[0, 0] = 0
 c1[0, 1] = 0
@@ -262,7 +262,7 @@ while i1 <= data_length - 1:
 m2 = np.empty([1, 2])
 m2[0, 0] = 0
 m2[0, 1] = 0
-n2 = 0.0
+n2 = 0
 c2 = np.empty([1, 2])
 c2[0, 0] = 0
 c2[0, 1] = 0
@@ -282,7 +282,7 @@ while i2 <= data_length - 1:
 m3 = np.empty([1, 2])
 m3[0, 0] = 0
 m3[0, 1] = 0
-n3 = 0.0
+n3 = 0
 c3 = np.empty([1, 2])
 c3[0, 0] = 0
 c3[0, 1] = 0
@@ -297,21 +297,81 @@ while i3 <= data_length - 1:
         n3 += 1
         i3 += 1
         pass
+
 # Calculate mean:
 m1 = c1 / n1
 m2 = c2 / n2
 m3 = c3 / n3
 
+# Store data points to centroids:
+c1_x = 0
+c1_y = 0
+c2_x = 0
+c2_y = 0
+c3_x = 0
+c3_y = 0
+i1 = 0
+i2 = 0
+i3 = 0
+i = 0
+# Centroid 1:
+while i1 <= data_length - 1:
+    if(cent1[i1] == 0).any():
+        i1 += 1
+        pass
+    else:
+        c1_x = np.append(c1_x, float(cent1[i1, 0]))
+        c1_y = np.append(c1_y, float(cent1[i1, 1]))
+        i1 += 1
+        i += 1
+        pass
+
+
+# Centroid 2:
+i = 0
+while i2 <= data_length - 1:
+    if(cent2[i2] == 0).any():
+        i2 += 1
+        pass
+    else:
+        c2_x = np.append(c2_x, float(cent2[i2, 0]))
+        c2_y = np.append(c2_y, float(cent2[i2, 1]))
+        i2 += 1
+        i += 1
+        pass
+
+
+# Centroid 3:
+i = 0
+while i3 <= data_length - 1:
+    if(cent3[i3] == 0).any():
+        i3 += 1
+        pass
+    else:
+        c3_x = np.append(c3_x, float(cent3[i3, 0]))
+        c3_y = np.append(c3_y, float(cent3[i3, 1]))
+        i3 += 1
+        i += 1
+        pass
+
+c1 = np.vstack((np.array(c1_x), np.array(c1_y)))
+c2 = np.vstack((np.array(c2_x), np.array(c2_y)))
+c3 = np.vstack((np.array(c3_x), np.array(c3_y)))
+
+del c1_x, c1_y, c2_x, c2_y, c3_x, c3_y
 # Plot new Centroids:
 plt.scatter(data[0], data[1], c='black')
 plt.scatter(m1[0, 0], m1[0, 1], c='red')
-plt.scatter(m2[0, 0], m2[0, 1], c='red')
-plt.scatter(m3[0, 0], m3[0, 1], c='red')
+plt.scatter(c1[0], c1[1], c='red', alpha=.6)
+plt.scatter(m2[0, 0], m2[0, 1], c='blue')
+plt.scatter(c2[0], c2[1], c='blue', alpha=.6)
+plt.scatter(m3[0, 0], m3[0, 1], c='green')
+plt.scatter(c3[0], c3[1], c='green', alpha=.6)
 plt.xlim([0, 1])
 plt.ylim([0, 1])
 plt.xlabel('X-')
 plt.ylabel('Y')
-plt.title('Plot with new Centroids')
+plt.title('Plot with new Centroids and data points')
 plt.show()
 
 # Store Values in output_example.csv (new one) (Marija Toshevska).
