@@ -168,41 +168,15 @@ tmp = np.empty([data_length, n_cluster])
 while x <= data_length - 1:
     a[0, 0] = data[0, x]
     a[0, 1] = data[1, x]
-    if(cent1 == a).any():
-        dist1 = cdist(cent1, a, metric='cityblock')
-        dist2 = cdist(cent2, a, metric='cityblock')
-        dist3 = cdist(cent3, a, metric='cityblock')
-        tmp[x, 0] = dist1
-        tmp[x, 1] = dist2
-        tmp[x, 2] = dist3
-        x += 1
-        pass
-    elif(cent2 == a).any():
-        dist1 = cdist(cent1, a, metric='cityblock')
-        dist2 = cdist(cent2, a, metric='cityblock')
-        dist3 = cdist(cent3, a, metric='cityblock')
-        tmp[x, 0] = dist1
-        tmp[x, 1] = dist2
-        tmp[x, 2] = dist3
-        x += 1
-        pass
-    elif(cent3 == a).any():
-        dist1 = cdist(cent1, a, metric='cityblock')
-        dist2 = cdist(cent2, a, metric='cityblock')
-        dist3 = cdist(cent3, a, metric='cityblock')
-        tmp[x, 0] = dist1
-        tmp[x, 1] = dist2
-        tmp[x, 2] = dist3
-        x += 1
-        pass
-    else:
-        dist1 = cdist(cent1, a, metric='cityblock')
-        dist2 = cdist(cent2, a, metric='cityblock')
-        dist3 = cdist(cent3, a, metric='cityblock')
-        tmp[x, 0] = dist1
-        tmp[x, 1] = dist2
-        tmp[x, 2] = dist3
-        x += 1
+    dist1 = cdist(cent1, a, metric='cityblock')
+    dist2 = cdist(cent2, a, metric='cityblock')
+    dist3 = cdist(cent3, a, metric='cityblock')
+    tmp[x, 0] = dist1
+    tmp[x, 1] = dist2
+    tmp[x, 2] = dist3
+    x += 1
+    pass
+
 
 x = 0
 cent1 = np.empty([data_length, dimensions])
