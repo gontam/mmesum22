@@ -1,4 +1,4 @@
-## Project done and handed in by Cristiana Soriano, Marija Toshevksa, Oliver Jovanović
+# Project done and handed in by Cristiana Soriano, Marija Toshevksa, Oliver Jovanović
 import matplotlib.pyplot as plt
 import pandas as pd
 import numpy as np
