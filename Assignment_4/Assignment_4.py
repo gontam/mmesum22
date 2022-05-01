@@ -4,7 +4,7 @@ from Bio import Entrez
 
 
 # Chose gene 'APOL1' from Assignment 1:
-# Have a look how many results are there for 'APOL1':
+# Have a look how many results are there for 'APOL1' at NCBI:
 Entrez.email = 'me21x506@technikum-wien.at'
 handle = Entrez.egquery(term='APOL1')
 record = Entrez.read(handle)
@@ -18,4 +18,3 @@ handle.close()
 handle = Entrez.esearch(db='nucleotide', term='APOL1', retmax=5, idtype='acc')
 record = Entrez.read(handle)
 handle.close()
-
