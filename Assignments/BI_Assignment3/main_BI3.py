@@ -1,6 +1,7 @@
 # MME2021 - Bioinformatics
 # Assignment 3 - K-means
 # Date: 08.04.2022
+# Latest change: 01.05.2022
 # Authors: Johannes Köhrer, Lisa Stefely, Johanna Schachl
 
 import numpy as np
@@ -160,76 +161,3 @@ for row in result_array:
     csvfile.write('\n')
     index_count += 1
 csvfile.close()
-
-
-"""
-Thoughts_
-should the final or starting seed points be saved in the output?
-number of iterations = loop_count +/- 1?
-"""
-
-"""
-    Biopython Cookbook
-    
-from Bio.Cluster import distancematrix
-from Bio.Cluster import clustercentroids
-from Bio.Cluster import clusterdistance
-from Bio.Cluster import kcluster
-
-# Calculating the distance matrix
-distance_matrix = distancematrix(x, dist='b')
-print(distance_matrix)
-
-# Calculating the cluster centroids
-cdata, cmask = clustercentroids(x)
-print(cdata)
-print(cmask)
-
-# Calculating the distance between clusters
-distance_cluster = clusterdistance(x, dist='b')
-print(distance_cluster)
-
-# Partitioning algorithms
-clusterid, error, nfound = kcluster(x, nclusters=3, npass=1, dist='b')
-print(clusterid)
-print(error)
-print(nfound)
-"""
-
-"""
-center_1 = f"{center_1[0]};{center_1[1]}"
-test = "18;2;"
-with open("output_2.csv", 'w', newline='') as csvfile:
-    csvwriter = csv.writer(csvfile)
-    csvwriter.writerow([test])
-    csvwriter.writerow([center_1])
-"""
-
-"""
-with open("A2.2_Sickle_Cell_Disease_Koehrer_Johannes.csv", 'w', newline='') as csvfile:
-   # csvwriter = csv.writer(csvfile)
-    #csvwriter.writerow(fields)
-"""
-
-"""
-for column in range(result_array.shape[1]):
-    for row in range(result_array.shape[0]):
-        if result_array[row][column] == 1:
-            result_array[row][column] = None
-
-"""
-
-"""
-print(f"cluster_1 {cluster_1}")
-print(f"cluster_2 {cluster_2}")
-print(f"cluster_3 {cluster_3}")
-
-print(f"Center_1_old {center_1_old}")
-print(f"Center_2_old {center_2_old}")
-print(f"Center_3_old {center_3_old}")
-
-clustering = AgglomerativeClustering(n_clusters=3, affinity='manhattan', linkage='average', compute_distances=True).fit(data_array)
-print(clustering)
-print(clustering.labels_)
-print(clustering.distances_)
-"""
