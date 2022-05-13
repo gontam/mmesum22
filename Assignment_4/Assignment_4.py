@@ -12,9 +12,31 @@ for row in record['eGQueryResult']:
     if row['DbName'] == 'nuccore':
         print(row['Count'])
 handle.close()
-# 7060 Results!
+# 7062 Results!
 
-# Download five different entries:
-handle = Entrez.esearch(db='nucleotide', term='APOL1', retmax=5, idtype='acc')
-record = Entrez.read(handle)
-handle.close()
+# Important Information:
+# APOL1 can only be found in primal species. It will be differentiated between the primal species:
+# Have this gene: - Human, - Gorilla, - Baboon
+# Have a pseudo gene: - Orangutan, - Macaque
+
+# Download five different entries from five different primate species:
+# Human:
+handle = Entrez.esearch(db='nucleotide', term='APOL1 Human', retmax=5, idtype='acc')
+record_Human = Entrez.read(handle)
+
+# Gorilla:
+handle = Entrez.esearch(db='nucleotide', term='APOL1 Gorilla', retmax=5, idtype='acc')
+record_Gorilla = Entrez.read(handle)
+
+# Baboon:
+handle = Entrez.esearch(db='nucleotide', term='APOL1 Baboon', retmax=5, idtype='acc')
+record_Baboon = Entrez.read(handle)
+
+# Pseudo gene:
+# Orangutan:
+handle = Entrez.esearch(db='nucleotide', term='APOL1 Baboon', retmax=5, idtype='acc')
+record_Orangutan = Entrez.read(handle)
+
+# Macaque:
+handle = Entrez.esearch(db='nucleotide', term='APOL1 Macaque', retmax=5, idtype='acc')
+record_Macaque = Entrez.read(handle)
