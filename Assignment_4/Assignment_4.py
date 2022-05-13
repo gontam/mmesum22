@@ -2,10 +2,11 @@
 # Import Libraries:
 from Bio import Entrez
 from Bio import SeqIO
-import pandas as pd
 from Bio.SeqUtils import GC
 from Bio import AlignIO
 from Bio import Phylo
+import pandas as pd
+import numpy as np
 
 
 # Chose gene 'APOL1' from Assignment 1:
@@ -124,12 +125,18 @@ df = pd.DataFrame(list(zip(lst, lst_Human, lst_Gorilla, lst_Baboon, lst_Oranguta
                   columns=['Information', 'Human', 'Gorilla', 'Baboon', 'Orangutan', 'Macaque'])
 print(df)
 
-## Seq Aligments:
-Seq_Human
+# Seq Alignments:
+seq_lst = [Seq_Human, Seq_Gorilla, Seq_Baboon, Seq_Orangutan, Seq_Macaque]
+seq_arr = np.array(seq_lst)
+alignments = AlignIO.parse(seq_arr, 'fasta')
+
+# Phylogenetic tree
+
 # Delete unnecessary variables:
 del handle, record, id_Baboon, lst_Baboon, id_Gorilla, lst_Gorilla, id_Human, lst_Human, id_Macaque, lst_Macaque
-del id_Orangutan, lst_Orangutan, length_Orangutan, length_Macaque, length_Human, length_Baboon, length_Gorilla
+del id_Orangutan, lst_Orangutan, length_Orangutan, length_Macaque, length_Human, length_Baboon, length_Gorilla, lst
 del organism_Macaque, organism_Baboon, organism_Human, organism_Gorilla, organism_Orangutan
 del title, y, title_Macaque, title_Orangutan, title_Baboon, title_Human, title_Gorilla
 del record_Baboon, record_test, record_Macaque, record_Orangutan, record_Human, record_Gorilla
 del ref, row, GC_Orangutan, GC_Macaque, GC_Human, GC_Baboon, GC_Gorilla
+del Seq_Baboon, Seq_Gorilla, Seq_Human, Seq_Macaque, Seq_Orangutan
