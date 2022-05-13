@@ -3,6 +3,9 @@
 from Bio import Entrez
 from Bio import SeqIO
 import pandas as pd
+from Bio.SeqUtils import GC
+from Bio import AlignIO
+from Bio import Phylo
 
 
 # Chose gene 'APOL1' from Assignment 1:
@@ -28,7 +31,7 @@ handle = Entrez.esearch(db='nucleotide', term='APOL1 Human', retmax=5, idtype='a
 record_Human = Entrez.read(handle)
 id_Human = record_Human["IdList"][0]
 
-# Get Other information:
+# Get further information:
 handle = Entrez.efetch(db='nucleotide', id=id_Human, rettype='gb', retmode='text')
 record = SeqIO.read(handle, 'genbank')
 for ref in record.annotations['references']:
@@ -39,20 +42,24 @@ for ref in record.annotations['references']:
 title_Human = title
 organism_Human = record.annotations['organism']
 length_Human = record.__len__()
-lst_Human = [id_Human, title_Human, organism_Human, length_Human]
+GC_Human = GC(record.seq)
+Seq_Human = record.seq
+lst_Human = [id_Human, title_Human, organism_Human, length_Human, GC_Human]
 
 # Gorilla -- 2:
 handle = Entrez.esearch(db='nucleotide', term='APOL1 Gorilla', retmax=5, idtype='acc')
 record_Gorilla = Entrez.read(handle)
 id_Gorilla = record_Gorilla["IdList"][0]
 
-# Get Other information:
+# Get further information:
 handle = Entrez.efetch(db='nucleotide', id=id_Gorilla, rettype='gb', retmode='text')
 record = SeqIO.read(handle, 'genbank')
-title_Gorilla = record.annotations['comment'] # No References (Titles).
+title_Gorilla = record.annotations['comment']  # No References (Titles).
 organism_Gorilla = record.annotations['organism']
 length_Gorilla = record.__len__()
-lst_Gorilla = [id_Gorilla, title_Gorilla, organism_Gorilla, length_Gorilla]
+GC_Gorilla = GC(record.seq)
+Seq_Gorilla = record.seq
+lst_Gorilla = [id_Gorilla, title_Gorilla, organism_Gorilla, length_Gorilla, GC_Gorilla]
 
 # Baboon -- 5:
 handle = Entrez.esearch(db='nucleotide', term='APOL1 Baboon', retmax=5, idtype='acc')
@@ -60,7 +67,7 @@ record_Baboon = Entrez.read(handle)
 id_Baboon = record_Baboon["IdList"][0]
 
 
-# Get Other information:
+# Get further information:
 handle = Entrez.efetch(db='nucleotide', id=id_Baboon, rettype='gb', retmode='text')
 record = SeqIO.read(handle, 'genbank')
 for ref in record.annotations['references']:
@@ -71,7 +78,9 @@ for ref in record.annotations['references']:
 title_Baboon = title
 organism_Baboon = record.annotations['organism']
 length_Baboon = record.__len__()
-lst_Baboon = [id_Baboon, title_Baboon, organism_Baboon, length_Baboon]
+GC_Baboon = GC(record.seq)
+Seq_Baboon = record.seq
+lst_Baboon = [id_Baboon, title_Baboon, organism_Baboon, length_Baboon, GC_Baboon]
 
 # Pseudo gene:
 # Orangutan -- 5:
@@ -79,20 +88,22 @@ handle = Entrez.esearch(db='nucleotide', term='APOL1 Orangutan', retmax=5, idtyp
 record_Orangutan = Entrez.read(handle)
 id_Orangutan = record_Orangutan["IdList"][0]
 
-# Get Other information:
+# Get further information:
 handle = Entrez.efetch(db='nucleotide', id=id_Orangutan, rettype='gb', retmode='text')
 record = SeqIO.read(handle, 'genbank')
-title_Orangutan = record.annotations['comment']
+title_Orangutan = record.annotations['comment']  # No Reference (Titles).
 organism_Orangutan = record.annotations['organism']
 length_Orangutan = record.__len__()
-lst_Orangutan = [id_Orangutan, title_Orangutan, organism_Orangutan, length_Orangutan]
+GC_Orangutan = GC(record.seq)
+Seq_Orangutan = record.seq
+lst_Orangutan = [id_Orangutan, title_Orangutan, organism_Orangutan, length_Orangutan, GC_Orangutan]
 
 # Macaque -- 5:
 handle = Entrez.esearch(db='nucleotide', term='APOL1 Macaque', retmax=5, idtype='acc')
 record_Macaque = Entrez.read(handle)
 id_Macaque = record_Macaque["IdList"][0]
 
-# Get Other information:
+# Get further information:
 handle = Entrez.efetch(db='nucleotide', id=id_Macaque, rettype='gb', retmode='text')
 record = SeqIO.read(handle, 'genbank')
 for ref in record.annotations['references']:
@@ -103,17 +114,22 @@ for ref in record.annotations['references']:
 title_Macaque = title
 organism_Macaque = record.annotations['organism']
 length_Macaque = record.__len__()
-lst_Macaque = [id_Macaque, title_Macaque, organism_Macaque, length_Macaque]
+GC_Macaque = GC(record.seq)
+Seq_Macaque = record.seq
+lst_Macaque = [id_Macaque, title_Macaque, organism_Macaque, length_Macaque, GC_Macaque]
 
 # Create Dataframe with all information:
-df = pd.DataFrame(list(zip(lst_Human, lst_Gorilla, lst_Baboon, lst_Orangutan, lst_Macaque)),
-                  columns=['Human', 'Gorilla', 'Baboon', 'Orangutan', 'Macaque'])
-display(df)
+lst = ['Accession Number', 'Title', 'Organism', 'Length of Sequence', 'GC Percentage in %']
+df = pd.DataFrame(list(zip(lst, lst_Human, lst_Gorilla, lst_Baboon, lst_Orangutan, lst_Macaque)),
+                  columns=['Information', 'Human', 'Gorilla', 'Baboon', 'Orangutan', 'Macaque'])
+print(df)
 
+## Seq Aligments:
+Seq_Human
 # Delete unnecessary variables:
 del handle, record, id_Baboon, lst_Baboon, id_Gorilla, lst_Gorilla, id_Human, lst_Human, id_Macaque, lst_Macaque
 del id_Orangutan, lst_Orangutan, length_Orangutan, length_Macaque, length_Human, length_Baboon, length_Gorilla
 del organism_Macaque, organism_Baboon, organism_Human, organism_Gorilla, organism_Orangutan
 del title, y, title_Macaque, title_Orangutan, title_Baboon, title_Human, title_Gorilla
 del record_Baboon, record_test, record_Macaque, record_Orangutan, record_Human, record_Gorilla
-del ref, row
+del ref, row, GC_Orangutan, GC_Macaque, GC_Human, GC_Baboon, GC_Gorilla
