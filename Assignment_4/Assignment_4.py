@@ -45,7 +45,7 @@ GC_Human = GC(record.seq)
 Seq_Human = record.seq
 lst_Human = [id_Human, title_Human, organism_Human, length_Human, GC_Human]
 
-# Writing file:
+# Writing sequence file:
 Entrez.email = "me21x506@technikum-wien.at"
 with Entrez.efetch(db='nucleotide', rettype='fasta', retmode='text', id=id_Human) as handle:
     seq_record = SeqIO.read(handle, 'fasta')
@@ -66,7 +66,7 @@ GC_Gorilla = GC(record.seq)
 Seq_Gorilla = record.seq
 lst_Gorilla = [id_Gorilla, title_Gorilla, organism_Gorilla, length_Gorilla, GC_Gorilla]
 
-# Writing file:
+# Writing sequence file:
 Entrez.email = "me21x506@technikum-wien.at"
 with Entrez.efetch(db='nucleotide', rettype='fasta', retmode='text', id=id_Gorilla) as handle:
     seq_record = SeqIO.read(handle, 'fasta')
@@ -93,7 +93,7 @@ GC_Baboon = GC(record.seq)
 Seq_Baboon = record.seq
 lst_Baboon = [id_Baboon, title_Baboon, organism_Baboon, length_Baboon, GC_Baboon]
 
-# Writing file:
+# Writing sequence file:
 Entrez.email = "me21x506@technikum-wien.at"
 with Entrez.efetch(db='nucleotide', rettype='fasta', retmode='text', id=id_Baboon) as handle:
     seq_record = SeqIO.read(handle, 'fasta')
@@ -115,7 +115,7 @@ GC_Orangutan = GC(record.seq)
 Seq_Orangutan = record.seq
 lst_Orangutan = [id_Orangutan, title_Orangutan, organism_Orangutan, length_Orangutan, GC_Orangutan]
 
-# Writing file:
+# Writing sequence file:
 Entrez.email = "me21x506@technikum-wien.at"
 with Entrez.efetch(db='nucleotide', rettype='fasta', retmode='text', id=id_Orangutan) as handle:
     seq_record = SeqIO.read(handle, 'fasta')
@@ -141,7 +141,7 @@ GC_Macaque = GC(record.seq)
 Seq_Macaque = record.seq
 lst_Macaque = [id_Macaque, title_Macaque, organism_Macaque, length_Macaque, GC_Macaque]
 
-# Writing file:
+# Writing sequence file:
 Entrez.email = "me21x506@technikum-wien.at"
 with Entrez.efetch(db='nucleotide', rettype='fasta', retmode='text', id=id_Macaque) as handle:
     seq_record = SeqIO.read(handle, 'fasta')
@@ -153,7 +153,7 @@ df = pd.DataFrame(list(zip(lst, lst_Human, lst_Gorilla, lst_Baboon, lst_Oranguta
                   columns=['Information', 'Human', 'Gorilla', 'Baboon', 'Orangutan', 'Macaque'])
 print(df)
 
-# Seq Alignments:
+# Sequence alignment implementation:
 alignment_Human = AlignIO.read(open('Human.faa'), 'fasta')
 print("Human:", alignment_Human)
 alignment_Gorilla = AlignIO.read(open('Gorilla.faa'), 'fasta')
@@ -165,7 +165,7 @@ print("Orangutan:", alignment_Orangutan)
 alignment_Macaque = AlignIO.read(open('Macaque.faa'), 'fasta')
 print("Macaque:", alignment_Macaque)
 
-# Phylogenetic tree
+# Phylogenetic tree implementation:
 
 # Delete unnecessary variables:
 del handle, record, id_Baboon, lst_Baboon, id_Gorilla, lst_Gorilla, id_Human, lst_Human, id_Macaque, lst_Macaque
