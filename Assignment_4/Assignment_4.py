@@ -155,9 +155,11 @@ df = pd.DataFrame(list(zip(lst, lst_Human, lst_Gorilla, lst_Baboon, lst_Oranguta
 print(df)
 
 # Seq Alignments:
-
-
-
+alignment_Human = AlignIO.read(open('Human.faa'), 'fasta')
+alignment_Gorilla = AlignIO.read(open('Gorilla.faa'), 'fasta')
+alignment_Baboon = AlignIO.read(open('Baboon.faa'), 'fasta')
+alignment_Orangutan = AlignIO.read(open('Orangutan.faa'), 'fasta')
+alignment_Macaque = AlignIO.read(open('Macaque.faa'), 'fasta')
 # Phylogenetic tree
 
 # Delete unnecessary variables:
