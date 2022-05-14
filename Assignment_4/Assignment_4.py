@@ -6,7 +6,6 @@ from Bio.SeqUtils import GC
 from Bio import AlignIO
 from Bio import Phylo
 import pandas as pd
-import numpy as np
 
 
 # Chose gene 'APOL1' from Assignment 1:
@@ -47,6 +46,12 @@ GC_Human = GC(record.seq)
 Seq_Human = record.seq
 lst_Human = [id_Human, title_Human, organism_Human, length_Human, GC_Human]
 
+# Writing file:
+Entrez.email = "me21x506@technikum-wien.at"
+with Entrez.efetch(db='nucleotide', rettype='fasta', retmode='text', id=id_Human) as handle:
+    seq_record = SeqIO.read(handle, 'fasta')
+SeqIO.write(seq_record, 'Human.faa', 'fasta')
+
 # Gorilla -- 2:
 handle = Entrez.esearch(db='nucleotide', term='APOL1 Gorilla', retmax=5, idtype='acc')
 record_Gorilla = Entrez.read(handle)
@@ -61,6 +66,12 @@ length_Gorilla = record.__len__()
 GC_Gorilla = GC(record.seq)
 Seq_Gorilla = record.seq
 lst_Gorilla = [id_Gorilla, title_Gorilla, organism_Gorilla, length_Gorilla, GC_Gorilla]
+
+# Writing file:
+Entrez.email = "me21x506@technikum-wien.at"
+with Entrez.efetch(db='nucleotide', rettype='fasta', retmode='text', id=id_Gorilla) as handle:
+    seq_record = SeqIO.read(handle, 'fasta')
+SeqIO.write(seq_record, 'Gorilla.faa', 'fasta')
 
 # Baboon -- 5:
 handle = Entrez.esearch(db='nucleotide', term='APOL1 Baboon', retmax=5, idtype='acc')
@@ -83,6 +94,12 @@ GC_Baboon = GC(record.seq)
 Seq_Baboon = record.seq
 lst_Baboon = [id_Baboon, title_Baboon, organism_Baboon, length_Baboon, GC_Baboon]
 
+# Writing file:
+Entrez.email = "me21x506@technikum-wien.at"
+with Entrez.efetch(db='nucleotide', rettype='fasta', retmode='text', id=id_Baboon) as handle:
+    seq_record = SeqIO.read(handle, 'fasta')
+SeqIO.write(seq_record, 'Baboon.faa', 'fasta')
+
 # Pseudo gene:
 # Orangutan -- 5:
 handle = Entrez.esearch(db='nucleotide', term='APOL1 Orangutan', retmax=5, idtype='acc')
@@ -98,6 +115,12 @@ length_Orangutan = record.__len__()
 GC_Orangutan = GC(record.seq)
 Seq_Orangutan = record.seq
 lst_Orangutan = [id_Orangutan, title_Orangutan, organism_Orangutan, length_Orangutan, GC_Orangutan]
+
+# Writing file:
+Entrez.email = "me21x506@technikum-wien.at"
+with Entrez.efetch(db='nucleotide', rettype='fasta', retmode='text', id=id_Orangutan) as handle:
+    seq_record = SeqIO.read(handle, 'fasta')
+SeqIO.write(seq_record, 'Orangutan.faa', 'fasta')
 
 # Macaque -- 5:
 handle = Entrez.esearch(db='nucleotide', term='APOL1 Macaque', retmax=5, idtype='acc')
@@ -119,6 +142,12 @@ GC_Macaque = GC(record.seq)
 Seq_Macaque = record.seq
 lst_Macaque = [id_Macaque, title_Macaque, organism_Macaque, length_Macaque, GC_Macaque]
 
+# Writing file:
+Entrez.email = "me21x506@technikum-wien.at"
+with Entrez.efetch(db='nucleotide', rettype='fasta', retmode='text', id=id_Macaque) as handle:
+    seq_record = SeqIO.read(handle, 'fasta')
+SeqIO.write(seq_record, 'Macaque.faa', 'fasta')
+
 # Create Dataframe with all information:
 lst = ['Accession Number', 'Title', 'Organism', 'Length of Sequence', 'GC Percentage in %']
 df = pd.DataFrame(list(zip(lst, lst_Human, lst_Gorilla, lst_Baboon, lst_Orangutan, lst_Macaque)),
@@ -126,9 +155,8 @@ df = pd.DataFrame(list(zip(lst, lst_Human, lst_Gorilla, lst_Baboon, lst_Oranguta
 print(df)
 
 # Seq Alignments:
-seq_lst = [Seq_Human, Seq_Gorilla, Seq_Baboon, Seq_Orangutan, Seq_Macaque]
-seq_arr = np.array(seq_lst)
-alignments = AlignIO.parse(seq_arr, 'fasta')
+
+
 
 # Phylogenetic tree
 
