@@ -4,9 +4,9 @@ from Bio import Entrez
 from Bio import SeqIO
 from Bio.SeqUtils import GC
 from Bio import AlignIO
-from Bio import Phylo
 import pandas as pd
-
+import os
+from Bio.Phylo.TreeConstruction import DistanceCalculator
 
 # Chose gene 'APOL1' from Assignment 1:
 # Have a look how many results are there for 'APOL1' at NCBI:
@@ -155,17 +155,18 @@ print(df)
 
 # Sequence alignment implementation:
 alignment_Human = AlignIO.read(open('Human.faa'), 'fasta')
-print("Human:", alignment_Human)
 alignment_Gorilla = AlignIO.read(open('Gorilla.faa'), 'fasta')
-print("Gorilla:", alignment_Gorilla)
 alignment_Baboon = AlignIO.read(open('Baboon.faa'), 'fasta')
-print("Baboon:", alignment_Baboon)
 alignment_Orangutan = AlignIO.read(open('Orangutan.faa'), 'fasta')
-print("Orangutan:", alignment_Orangutan)
 alignment_Macaque = AlignIO.read(open('Macaque.faa'), 'fasta')
-print("Macaque:", alignment_Macaque)
+
+alignments_all = [alignment_Human, alignment_Gorilla, alignment_Baboon, alignment_Orangutan, alignment_Macaque]
+
+# Rewrite alignments in PHYLIP format:
+AlignIO.write(alignments_all, 'alignments.phy', 'phylip')
 
 # Phylogenetic tree implementation:
+# I could not implement the Phylogenetic tree. I do not how to correctly format the file.
 
 # Delete unnecessary variables:
 del handle, record, id_Baboon, lst_Baboon, id_Gorilla, lst_Gorilla, id_Human, lst_Human, id_Macaque, lst_Macaque
