@@ -15,9 +15,8 @@ handle = Entrez.egquery(term='APOL1')
 record_test = Entrez.read(handle)
 for row in record_test['eGQueryResult']:
     if row['DbName'] == 'nuccore':
-        print(row['Count'])
+        print("Total number of entries:", row['Count'])
 handle.close()
-# 7062 Results!
 
 # Important Information:
 # APOL1 can only be found in primal species. It will be differentiated between the primal species:
@@ -156,10 +155,16 @@ print(df)
 
 # Seq Alignments:
 alignment_Human = AlignIO.read(open('Human.faa'), 'fasta')
+print("Human:", alignment_Human)
 alignment_Gorilla = AlignIO.read(open('Gorilla.faa'), 'fasta')
+print("Gorilla:", alignment_Gorilla)
 alignment_Baboon = AlignIO.read(open('Baboon.faa'), 'fasta')
+print("Baboon:", alignment_Baboon)
 alignment_Orangutan = AlignIO.read(open('Orangutan.faa'), 'fasta')
+print("Orangutan:", alignment_Orangutan)
 alignment_Macaque = AlignIO.read(open('Macaque.faa'), 'fasta')
+print("Macaque:", alignment_Macaque)
+
 # Phylogenetic tree
 
 # Delete unnecessary variables:
