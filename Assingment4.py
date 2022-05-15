@@ -59,34 +59,7 @@ with open(output_file, 'w') as f:
 alignment = AlignIO.read(output_file, "fasta")
 print(alignment)
 
-''''#input_file = "C:\\Users\\usuario\\Desktop\\FH-TECHNIKUM WIEN\\mmesum22\\ncbi_dataset\\data\\gene.fna"
-#for seq_record in SeqIO.parse(open(input_file), 'fasta'):
-for seq_record in SeqIO.parse(record, 'fasta'):
-    sequence_id = seq_record.id
-    sequence = repr(seq_record.seq)
-    sequence_length = len(seq_record)
-    description=seq_record.description
-    parts=re.split(r'[-,\s]\s*',description)
-    accession_number = parts[0]
-    title = parts[2]
-    organism = parts[3]
-    org=organism.split('=')
-    organism = org[1]
-    organism = organism[0:len(organism)-1]
-    GC_percentage = GC(sequence)
 
-
-
-alignment = AlignIO.read(open(input_file), 'fasta')
-#print(alignment)
-
-columns = ["accession number","title","organism","length","GC percentage"]
-rows = [accession_number,title,organism,sequence_length,GC_percentage]
-col1="characteristics"
-col2="organism 1"
-data = pd.DataFrame({col1:columns,col2:rows})
-data.to_excel('results.xlsx',sheet_name ='sheet1',index=False)
-'''
 calculator = DistanceCalculator('identity')
 distMatrix = calculator.get_distance(alignment)
 #print(distMatrix)
