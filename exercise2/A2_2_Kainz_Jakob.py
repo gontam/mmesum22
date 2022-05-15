@@ -5,7 +5,6 @@ from Bio.SeqUtils.ProtParam import ProteinAnalysis
 import os
 
 
-
 def fetch_records():
     # Identifier for the database
     Entrez.email = "me21m014@technikum-wien.at"
