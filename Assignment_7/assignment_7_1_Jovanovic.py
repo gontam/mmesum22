@@ -20,6 +20,8 @@ if row == col:
     # If Columns and Rows are equal, do the LU decomposition.
     print("It is a quadratic matrix!")
     print("The current quadratic Matrix looks like:", N)
+    Lsub(L, b)
+
 else:
     # If Columns and Rows are unequal, exit the script.
     print("It is not a quadratic matrix. The Program will be shut down.")
