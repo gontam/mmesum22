@@ -59,10 +59,6 @@
 # 2. Based on the data, create 2 scenarios and model:
 # - an outbreak in a population
 #   - plot a graph showing the values for each compartment over time.
-# - an outbreak with introduction of an intervention in a population
-#   - plot a graph showing the values for each compartment over time
-#   - you can introduce 1 or more interventions
-#   - how did you choose the rates for the interventions?
 
 # Customized code based on Mariia Gontas code:
 import numpy as np
@@ -121,3 +117,69 @@ legend.get_frame().set_alpha(0.5)
 for spine in ('top', 'right', 'bottom', 'left'):
     ax.spines[spine].set_visible(False)
 plt.show()
+del E, E0, I, I0, N, R, R0, S, S0, alpha, ax, beta, fig, gamma, legend, mu, ret, spine, t, y0
+
+# - an outbreak with introduction of an intervention in a population
+#   - plot a graph showing the values for each compartment over time
+#   - you can introduce 1 or more interventions
+#   - how did you choose the rates for the interventions?
+# The only intervention is that the people look after their hygiene. I assume that there are probably 10% of people who
+# do this on regular basis.
+# Total population, N.
+N = 1000
+# Population which looks at hygiene 10% of total population.
+M = N * .1
+# Initial number of infected and recovered individuals, I0 and R0.
+# Decrease the infections number by 10%.
+I0, R0 = 1 * .1, 0
+# Everyone else, S0, is susceptible to infection initially.
+S0 = N - M - I0 - R0
+# Exposure:
+# e.g. https://www.sciencedirect.com/science/article/pii/S1755436513000546
+# Decrease by 10% because of hygiene.
+E0 = .9
+# Contact rate, beta, and mean recovery rate, gamma, (in 1/days).
+beta, gamma = 0.2, 1. / 10
+# transmission rate, alpha and per-capita birth or death rate, mu.
+# e.g. https://pubmed.ncbi.nlm.nih.gov/32087775/#:~:text=The%20microbiologically%20confirmed%20symptomatic%20transmission,21%20of%20119%20household%20members).
+# e.g. https://bmcinfectdis.biomedcentral.com/articles/10.1186/s12879-019-4007-2#:~:text=A%20systematic%20review%20of%2039,per%20100%2C000%20persons%20%5B21%5D.
+# Decrease alpha by 10% from 10% to 9%.
+alpha, mu = .09, 3.2 / 100000
+# A grid of time points (in days)
+t = np.linspace(0, 80, 80)
+
+# The SEIR model differential equations.
+def deriv(y, t, N, alpha, beta, gamma, mu):
+    S, E, I, R, = y
+    dSdt = mu * N - beta * S * I - mu * S
+    dEdt = beta * S * I - alpha * E - mu * E
+    dIdt = alpha * E - gamma * I - mu * I
+    dRdt = gamma * I - mu * R
+    return dSdt, dEdt, dIdt, dRdt
+
+# Initial conditions vector
+y0 = S0, E0, I0, R0
+# Integrate the SIR equations over the time grid, t.
+ret = odeint(deriv, y0, t, args=(N, alpha, beta, gamma, mu))
+S, E, I, R = ret.T
+
+# Plot the data on three separate curves for S(t), I(t) and R(t)
+fig = plt.figure(facecolor='w')
+ax = fig.add_subplot(111, facecolor='#dddddd', axisbelow=True)
+ax.plot(t, S / 1000, 'b', alpha=.5, lw=2, label='Susceptible')
+ax.plot(t, E / 1000, 'k', alpha=.5, lw=2, label='Exposure')
+ax.plot(t, I / 1000, 'r', alpha=.5, lw=2, label='Infected')
+ax.plot(t, R / 1000, 'g', alpha=.5, lw=2, label='Recovered with immunity')
+ax.set_title('SEIR Model: Norovirus - with intervention')
+ax.set_xlabel('Time /days')
+ax.set_ylabel('Number (1000s)')
+ax.set_ylim(0, 1.2)
+ax.yaxis.set_tick_params(length=0)
+ax.xaxis.set_tick_params(length=0)
+ax.grid(visible=True, which='major', c='w', lw=2, ls='-')
+legend = ax.legend()
+legend.get_frame().set_alpha(0.5)
+for spine in ('top', 'right', 'bottom', 'left'):
+    ax.spines[spine].set_visible(False)
+plt.show()
+del E, E0, I, I0, N, R, R0, S, S0, alpha, ax, beta, fig, gamma, legend, mu, ret, spine, t, y0
