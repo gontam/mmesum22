@@ -75,34 +75,41 @@ N = 1000
 I0, R0 = 1, 0
 # Everyone else, S0, is susceptible to infection initially.
 S0 = N - I0 - R0
+# Exposure:
+# e.g. https://www.sciencedirect.com/science/article/pii/S1755436513000546
+E0 = 1
 # Contact rate, beta, and mean recovery rate, gamma, (in 1/days).
 beta, gamma = 0.2, 1. / 10
+# transmission rate, alpha and per-capita birth or death rate, mu.
+# e.g. https://pubmed.ncbi.nlm.nih.gov/32087775/#:~:text=The%20microbiologically%20confirmed%20symptomatic%20transmission,21%20of%20119%20household%20members).
+# e.g. https://bmcinfectdis.biomedcentral.com/articles/10.1186/s12879-019-4007-2#:~:text=A%20systematic%20review%20of%2039,per%20100%2C000%20persons%20%5B21%5D.
+alpha, mu = 0.1, 3.2 / 100000
 # A grid of time points (in days)
-t = np.linspace(0, 160, 160)
+t = np.linspace(0, 80, 80)
 
-
-# The SIR model differential equations.
-def deriv(y, t, N, beta, gamma):
-    S, I, R = y
-    dSdt = -beta * S * I / N
-    dIdt = beta * S * I / N - gamma * I
-    dRdt = gamma * I
-    return dSdt, dIdt, dRdt
-
+# The SEIR model differential equations.
+def deriv(y, t, N, alpha, beta, gamma, mu):
+    S, E, I, R, = y
+    dSdt = mu * N - beta * S * I - mu * S
+    dEdt = beta * S * I - alpha * E - mu * E
+    dIdt = alpha * E - gamma * I - mu * I
+    dRdt = gamma * I - mu * R
+    return dSdt, dEdt, dIdt, dRdt
 
 # Initial conditions vector
-y0 = S0, I0, R0
+y0 = S0, E0, I0, R0
 # Integrate the SIR equations over the time grid, t.
-ret = odeint(deriv, y0, t, args=(N, beta, gamma))
-S, I, R = ret.T
+ret = odeint(deriv, y0, t, args=(N, alpha, beta, gamma, mu))
+S, E, I, R = ret.T
 
 # Plot the data on three separate curves for S(t), I(t) and R(t)
 fig = plt.figure(facecolor='w')
 ax = fig.add_subplot(111, facecolor='#dddddd', axisbelow=True)
-ax.plot(t, S / 1000, 'b', alpha=0.5, lw=2, label='Susceptible')
-ax.plot(t, I / 1000, 'r', alpha=0.5, lw=2, label='Infected')
-ax.plot(t, R / 1000, 'g', alpha=0.5, lw=2, label='Recovered with immunity')
-ax.set_title('SIR Model: Example')
+ax.plot(t, S / 1000, 'b', alpha=.5, lw=2, label='Susceptible')
+ax.plot(t, E / 1000, 'k', alpha=.5, lw=2, label='Exposure')
+ax.plot(t, I / 1000, 'r', alpha=.5, lw=2, label='Infected')
+ax.plot(t, R / 1000, 'g', alpha=.5, lw=2, label='Recovered with immunity')
+ax.set_title('SEIR Model: Norovirus')
 ax.set_xlabel('Time /days')
 ax.set_ylabel('Number (1000s)')
 ax.set_ylim(0, 1.2)
