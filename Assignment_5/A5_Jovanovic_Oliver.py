@@ -182,4 +182,19 @@ legend.get_frame().set_alpha(0.5)
 for spine in ('top', 'right', 'bottom', 'left'):
     ax.spines[spine].set_visible(False)
 plt.show()
-del E, E0, I, I0, N, R, R0, S, S0, alpha, ax, beta, fig, gamma, legend, mu, ret, spine, t, y0
+del E, E0, I, I0, M, N, R, R0, S, S0, alpha, ax, beta, fig, gamma, legend, mu, ret, spine, t, y0
+
+# 3. Analysis:
+# - analyze the impact of the intervention by comparing the scenarios without intervention vs. scenario(s) with intervention(s):
+# The intervention has impact on the overall infection rate of the whole population. If everyone looks after their
+# hygiene and wash their hands and also their surfaces and food before preparing it, there would not be any outbreak anymore.
+# The entire infectious population decreases by 10% while 10% of the people wash their hands and look after their hygiene.
+# This leads to the assumption that only 10% of the entire population would be exposed because the other 90% would not
+# look after their hygiene. One can see that there is also a difference in the Susception. The slope happens much slighter.
+#
+#   - create report to present your research data
+#   - write a short description of the scenarios with justification for the values used in the equations.
+#   The numbers ware based on research papers that one can find in this document. They are stated before assigned to the variables.
+#   E0 is stated as one because everyone is exposed to Norovirus.
+#   - write a short analysis of the scenarios you provide.
+#   - compare both scenarios to evaluate the effectiveness of an intervention.
