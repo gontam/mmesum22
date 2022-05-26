@@ -3,26 +3,31 @@
 # Choose and gather information about an infection or a Virus.
 # Answer:
 # I choose Norovirus.
+
 # Question:
 # Gather Information about a population where an outbreak has occurred or could happen:
 # Answer:
 # Norovirus has 685 million cases and 200,000 deaths per year. Anyone can get infected.
+
 # Question:
 # Choose a time frame (in days) for the model and/or the forecast
 # Answer:
 # Incubation time is 12 - 48 hours, it lasts for up to three days.
 # The model will have a time period of 5 days.
 # see: https://en.wikipedia.org/wiki/Norovirus .
+
 # Question:
 # Depending on the selected infectious disease, what compartments are there in the population?
 # Answer:
 # see: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5851036/ .
+
 # Question:
 # Define the factors that influence an outbreak either by using credible sources or by providing them by
 # yourself with justification.
 # Answer:
 # see: https://www.cdc.gov/norovirus/index.html
 # Spreads from infected people to others or through contaminated foods and surfaces. They occur most often Nov. - Apr.
+
 # Question:
 # Primarily: Susceptibility, infection rate, immunity
 # Answer:
@@ -30,6 +35,7 @@
 # Infection rate: (685,000,000 / 8,000,000,000) * 100 = 8.5625%.
 # Immunity: People with the presence or absence of human histoblood group antigens (HBGAs) are not very susceptible for
 # Norovirus, e.g. https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6466115/#:~:text=Despite%20their%20high%20infectivity%2C%20a,HBGAs)%20on%20gut%20epithelial%20surfaces.
+
 # Question:
 # Define the interventions that could have been / were undertaken to control the outbreak.
 # Answer:
@@ -37,14 +43,18 @@
 # Measures while being infected with Norovirus are:
 # Isolation, compliance with hygiene rules, a lot of drinking, ventilate rooms, personal laundry etc.
 # see: https://www.rki.de/DE/Content/Infekt/EpidBull/Merkblaetter/Ratgeber_Noroviren.html;jsessionid=B83068F8B0AF74955B92F6999E764A77.internet051#doc2374562bodyText12
+
 # Question:
 # How did you define the intervention factors in the equations? What are the values based on?
 # Answer:
-# ---
+# Because I chose the intervention "Paying attention to ones hygiene" the people who can get infected are reduced from
+# the total population because they cannot get infected if they keep paying attention to it and only eat at home.
+
 # Question:
 # Determine which variables are available and can be used to model this event
 # Answer:
 # see: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5851036/
+
 # Question:
 # What is R0? How is it different to Re? Note the answer down.
 # Answer:
