@@ -196,14 +196,14 @@ del E, E0, I, I0, M, N, R, R0, S, S0, alpha, ax, beta, fig, gamma, legend, mu, r
 
 #   - create report to present your research data
 # Research data:
-# - https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5851036/
-# - https://www.cdc.gov/norovirus/index.html
-# - https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6466115/#:~:text=Despite%20their%20high%20infectivity%2C%20a,HBGAs
-# - https://www.rki.de/DE/Content/Infekt/EpidBull/Merkblaetter/Ratgeber_Noroviren.html;jsessionid=B83068F8B0AF74955B92F6999E764A77.internet051#doc2374562bodyText12
-# - https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7751056/
-# - https://www.sciencedirect.com/science/article/pii/S1755436513000546
-# - https://pubmed.ncbi.nlm.nih.gov/32087775/#:~:text=The%20microbiologically%20confirmed%20symptomatic%20transmission,21%20of%20119%20household%20members
-# - https://bmcinfectdis.biomedcentral.com/articles/10.1186/s12879-019-4007-2#:~:text=A%20systematic%20review%20of%2039,per%20100%2C000%20persons%20%5B21%5D
+# - Equations SEIR: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5851036/
+# - Interventions: https://www.cdc.gov/norovirus/index.html
+# - Immunity: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6466115/#:~:text=Despite%20their%20high%20infectivity%2C%20a,HBGAs
+# - Interventions: https://www.rki.de/DE/Content/Infekt/EpidBull/Merkblaetter/Ratgeber_Noroviren.html;jsessionid=B83068F8B0AF74955B92F6999E764A77.internet051#doc2374562bodyText12
+# - What is R0 and Re?: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7751056/
+# - Exposure: https://www.sciencedirect.com/science/article/pii/S1755436513000546
+# - Alpha: https://pubmed.ncbi.nlm.nih.gov/32087775/#:~:text=The%20microbiologically%20confirmed%20symptomatic%20transmission,21%20of%20119%20household%20members
+# - Mu: https://bmcinfectdis.biomedcentral.com/articles/10.1186/s12879-019-4007-2#:~:text=A%20systematic%20review%20of%2039,per%20100%2C000%20persons%20%5B21%5D
 
 #   - write a short description of the scenarios with justification for the values used in the equations.
 #   The numbers are based on research papers that one can find in this document and that are stated in the point above.
@@ -215,7 +215,17 @@ del E, E0, I, I0, M, N, R, R0, S, S0, alpha, ax, beta, fig, gamma, legend, mu, r
 #   added.
 
 #   - write a short analysis of the scenarios you provide.
-#
+#   One can see that without any intervention that the whole population of 1000 people would be immune towards Norovirus
+#   in 80 days (2 2/3 months). This is because everyone can be infected and can infect other people with the Norovirus.
+#   This can be reduced by e.g. paying attention to ones hygiene (washing hands when arriving home [and on a regular basis],
+#   staying at home when one is sick, keeping "social distancing", wearing masks when one is ill and have to get out for
+#   grocery shopping etc.). I just implemented the first point "Paying attention towards personal hygiene". Only this
+#   point has a significant impact on the spreading of the Norovirus. It keeps people "immune" and does not let them count
+#   in the graph, if they pay attention to their personal hygiene and also preparing food at home and do not go out eating
+#   in restaurants (cheap ones).
 
 #   - compare both scenarios to evaluate the effectiveness of an intervention.
-#
+#   The named intervention has a significant impact on the Norovirus outbreak, because if everyone pays attention on
+#   their hygiene there would be a drastically lower infection rate than without the measure. One can see that there is
+#   no shorten timespan by paying attention towards ones hygiene but 10% of the people would not get infected (if they
+#   would only eat at home and pay attention towards their hygiene and the surface).
