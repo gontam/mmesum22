@@ -1,6 +1,6 @@
 #Assignment 5 - Modeling of infectious diseases - HEIN Raphael
 # Detail description of the simulation -> see A5_Hein_Raphael.pdf
-# Github:
+# Github: https://github.com/gontam/mmesum22/blob/Upload_Hein/Assignment%205/main.py
 
 
 import numpy as np
