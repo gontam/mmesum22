@@ -1,3 +1,4 @@
+# One-Man-Group: Oliver Jovanović
 # Implementation cellular automata with "Conway's Game of Life rule"
 # Import necessary libraries:
 import numpy as np
