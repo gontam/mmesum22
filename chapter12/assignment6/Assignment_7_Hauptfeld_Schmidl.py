@@ -78,7 +78,8 @@ if __name__ == "__main__":
     game.insert_pattern(round(args.width / 2 - pattern.shape[1] / 2), round(args.height / 2 - pattern.shape[0] / 2), pattern)
     # Display
     def update(frame):
-        game.progress()
+        if game.generation < args.generations:
+            game.progress()
         txt.set_text(f"Generation {game.generation}")
         im.set_data(game.get_field())
         return [im, txt]
