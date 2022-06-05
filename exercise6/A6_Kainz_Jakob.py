@@ -6,6 +6,8 @@ from matplotlib.animation import FuncAnimation
 import numpy as np
 import time
 
+# This project was a cooperation of Kainz Jakob and Gregor Metzenbauer.
+
 # This function calculates the changes on the board for the next generation, this includes births as well as deaths simultaneously.
 def calculateBirthAndDeath(index, column):
     # The criteria for birth and death is on purpose changed by 0.5 due to us including the stone itself when counting neighbors.
