@@ -6,7 +6,7 @@ from matplotlib.animation import FuncAnimation
 import itertools
 import sys
 
-# MME - BI - ASSIGNMENT 7 "GAME OF LIFE"
+# MME - BI - ASSIGNMENT 6 "GAME OF LIFE"
 # HAUPTFELD, Leonhard | SCHMIDL, Christopher
 # Run with --help to see all the options
 # Providing the parameters --generations with a generations count (e.g. --generatiosn 50) is required
