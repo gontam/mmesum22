@@ -4,6 +4,8 @@ import matplotlib.pyplot as plt
 import matplotlib.cm as cm
 from matplotlib.animation import FuncAnimation
 import itertools
+import matplotlib
+matplotlib.use("TkAgg")
 import sys
 
 # MME - BI - ASSIGNMENT 6 "GAME OF LIFE"
