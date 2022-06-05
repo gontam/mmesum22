@@ -6,6 +6,11 @@ from matplotlib.animation import FuncAnimation
 import itertools
 import sys
 
+# MME - BI - ASSIGNMENT 7 "GAME OF LIFE"
+# HAUPTFELD, Leonhard | SCHMIDL, Christopher
+# Run with --help to see all the options
+# Providing the parameters --generations with a generations count (e.g. --generatiosn 50) is required
+
 DEFAULT_WIDTH = 50
 DEFAULT_HEIGHT = 50
 DEFAULT_INTERVAL = 500
@@ -59,9 +64,10 @@ class GameOfLife:
 if __name__ == "__main__":
     # Parse arguments
     parser = argparse.ArgumentParser(description="Run Conway's game of life")
+    required_group = parser.add_argument_group('required arguments')
+    required_group.add_argument('--generations', type=int, required=True, help='Generations to simulate')
     parser.add_argument('--width', type=int, default=DEFAULT_WIDTH, help='Width of field')
     parser.add_argument('--height', type=int, default=DEFAULT_HEIGHT, help='Height of field')
-    parser.add_argument('--generations', type=int, required=True, help='Generations to simulate')
     parser.add_argument('--pattern', type=str, default=DEFAULT_PATTERN, choices=PATTERNS.keys(), help='Starting pattern. One of: ' + ', '.join(PATTERNS.keys()))
     parser.add_argument('--interval', type=str, default=DEFAULT_INTERVAL, help='At what interval a step is processed, in ms (animation speed, lower = faster)')
     args = parser.parse_args()
@@ -79,6 +85,6 @@ if __name__ == "__main__":
     fig, ax = plt.subplots()
     fig.canvas.manager.set_window_title("Game of Life")
     im = ax.imshow(game.get_field(), cmap=cm.binary, interpolation='nearest')
-    txt = ax.text(10, 10, f"Generation {game.generation}", bbox=dict(fill=False, edgecolor='red', linewidth=2))
+    txt = ax.text(1, 2, f"Generation {game.generation}", bbox=dict(fill=False, edgecolor='blue', linewidth=1))
     ani = FuncAnimation(fig, update, frames=np.linspace(0, 2*np.pi, 128), blit=True, interval=args.interval)
     plt.show()
