@@ -1,5 +1,6 @@
 # Author: Oliver Jovanović
 # Quicksort
+# Libraries for "check_my_sort()".
 import numpy as np
 import random as rnd
 import matplotlib.pyplot as plt
