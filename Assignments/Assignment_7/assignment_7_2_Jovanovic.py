@@ -105,4 +105,3 @@ def check_my_sort():
     plt.show()
 
 check_my_sort()
-
