@@ -104,7 +104,4 @@ def check_my_sort():
           + ' and ' + str(d2))
     plt.show()
 
-#check_my_sort()
-
-x = [1, 10, 50, 203, 10, 9, 1, 1, 1, 40, 4]
-myquicksort(x)
+check_my_sort()
