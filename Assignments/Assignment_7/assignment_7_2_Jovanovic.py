@@ -6,25 +6,26 @@ import random as rnd
 import matplotlib.pyplot as plt
 from time import time
 
-def partition(low, high, arr):
-    pivot = arr[high]
-    pointer = low
-    for i in range(low, high):
-        if arr[i] <= pivot:
-            arr[i], arr[pointer] = arr[pointer], arr[i]
-            pointer += 1
-    arr[pointer], arr[high] = arr[high], arr[pointer]
-    return pointer
-
 
 def quicksort(low, high, arr):
-    if len(arr) == 1:  # Terminating Condition for recursion. VERY IMPORTANT!
+    if len(arr) == 1:
         return arr
     if low < high:
-        pi = partition(low, high, arr)
-        quicksort(low, pi - 1, arr)  # Recursively sorting the left values
-        quicksort(pi + 1, high, arr)  # Recursively sorting the right values
+        p = partition(low, high, arr)
+        quicksort(low, p - 1, arr)
+        quicksort(p + 1, high, arr)
     return arr
+
+
+def partition(low, high, arr):
+    pointer = low
+    pivot = arr[high]
+    for j in range(low, high):
+        if arr[j] <= pivot:
+            arr[pointer], arr[j] = arr[j], arr[pointer]
+            pointer = pointer + 1
+    arr[pointer], arr[high] = arr[high], arr[pointer]
+    return pointer
 
 
 def myquicksort(lst):
@@ -103,5 +104,7 @@ def check_my_sort():
           + ' and ' + str(d2))
     plt.show()
 
-check_my_sort()
+#check_my_sort()
 
+x = [1, 10, 50, 203, 10, 9, 1, 1, 1, 40, 4]
+myquicksort(x)
