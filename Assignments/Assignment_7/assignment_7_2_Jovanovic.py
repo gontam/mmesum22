@@ -5,6 +5,10 @@ import numpy as np
 import random as rnd
 import matplotlib.pyplot as plt
 from time import time
+import sys
+
+# Error with recursion limit.
+sys.setrecursionlimit(4000)
 
 # Quicksort Algorithm
 def qs(low, high, lst):
@@ -18,6 +22,7 @@ def qs(low, high, lst):
         qs(p + 1, high, lst)
     # return the sorted list.
     return lst
+
 
 # Partition (Pointer) of Quicksort Algorithm
 def partition(low, high, lst):
