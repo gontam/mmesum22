@@ -6,13 +6,29 @@
 # Libraries:
 from scipy import integrate
 import numpy as np
+import math
+import random
+
+# Set seed for reproducibility
+random.seed(1, 0.1)
+
 
 def mc_pi(N):
+    # Generate N times random numbers between 0 and 1.
+    for x in range(N):
+        a = random.uniform(0, 1)
+        y = math.sqrt(1 - a**2)
+        approx_pi = 4 * np.mean(y)
+    return approx_pi
+
 
 def mc_pi_stat(N, M):
-
-def mc_pi_plt():
-
+    mc_pi(N)
 
 
+#def mc_pi_plt():
 
+
+# Results:
+N = 10**5
+print(mc_pi(N))
