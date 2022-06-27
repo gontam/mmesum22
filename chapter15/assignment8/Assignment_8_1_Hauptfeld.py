@@ -1,7 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 from math import ceil
-
+from scipy import integrate as spi
 
 # a) General IVP solving using RK4
 
@@ -57,10 +57,19 @@ def test_integration():
     t_from = 0
     t_to = 10
     dt = .1
-    # Go through all the steps
+    # Solve with homegrown solution
     t, y = RK4integrator([1, -1], derive, ceil(t_to/dt), t_from, dt)
-    print(y)
-    plt.plot(t, y)
+    # Also solve with scipy
+    sol = spi.solve_ivp(derive, (t_from, t_to), [1, -1])
+    # Plot comparison
+    plt.title("RK4 Integration")
+    plt.xlabel("t")
+    plt.ylabel("y")
+    plt.plot(t, [i[0] for i in y], color="green",      label="y1 (Own)")
+    plt.plot(t, [i[1] for i in y], color="lightgreen", label="y2 (Own)")
+    plt.plot(sol.t, sol.y[0], color="blue",      label="y1 (SciPy)")
+    plt.plot(sol.t, sol.y[1], color="lightblue", label="y1 (SciPy)")
+    plt.gca().legend()
     plt.show()
 
 if __name__ == "__main__":
