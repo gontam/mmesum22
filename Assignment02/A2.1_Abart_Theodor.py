@@ -21,3 +21,5 @@ data = read_fasta(filename_sequence)
 filename_standard = 'standard.txt'
 standard = read_standard(filename_standard)
 print(standard)
+
+
